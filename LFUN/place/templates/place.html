@@ -8,6 +8,36 @@
             <link rel="stylesheet" href="{% static 'css/place.css' %}">
         </head>
         <body>
-
+            <p style="color: #898989; font: size 15px; font-weight:700; position:absolute; left:80%;" >*는 필수입력 요소입니다.</p>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="input-element">
+                    <div>
+                        <label style="color:#f65656; font-weight:700; font-size:18px;">장소명*</label><br>
+                        <input type="text" name="place_name" placeholder="장소 이름을 입력해주세요" id="place_name" required>
+                    </div>
+                    <div>
+                        <label style="color:#f65656; font-weight:700; font-size:18px;">장소소개*</label><br>
+                        <input type="text" name="place_introduce" placeholder="장소를 소개해주세요. 상세할수록 예약확률이 높습니다." id="place_introduce" required>
+                    </div>
+                    <div>
+                        <label style="color:#f65656; font-weight:700; font-size:18px;">장소 예약 시 주의사항</label><br>
+                        <input type="text" name="place_caution" placeholder="주의 사항을 입력해주세요." id="place_caution">
+                    </div>
+                    <div>
+                        <label style="color:#f65656; font-weight:700; font-size:18px;">장소이미지*</label>
+                        <input type="image" name="place_image" id="place_image" required>
+                    </div>
+                    <div>
+                        <label style="color:#f65656; font-weight:700; font-size:18px;">주소*</label><br>
+                        <input type="text" name="place_address" placeholder="주소를 입력해주세요" id="place_address" required>
+                    </div>
+                    <div>
+                        <label style="color:#f65656; font-weight:700; font-size:18px;">대여료*</label><h style="color:#f65656; font-size:15px; font-weight:700; position:absolute; left:60%;"  >※장소대여비는 24시간 기준으로 작성해주세요.</h> <br>
+                        <input type="text" name="place_price" placeholder="원하시는 장소 대여비를 입력해주세요. EX) 80000원" id="place_price" required>
+                    </div>
+                    <button type="submit" id="submit-btn" style="color:white; font-size:20px;">등록하기</button>
+                </div>
+            </form>
         </body>
     </html>

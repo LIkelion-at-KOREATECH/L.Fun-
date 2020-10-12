@@ -1,0 +1,55 @@
+.input-element {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    margin-top: 50px;
+    transform: translateX(-50%);
+}
+
+#place_name{
+  width: 800px;
+  height: 70px;
+  border: solid 1px #707070;
+  background-color: #ffffff;
+  margin-bottom : 10px;
+}
+#place_introduce{
+    width: 800px;
+    height: 70px;
+    border: solid 1px #707070;
+    background-color: #ffffff;
+    margin-bottom : 10px;
+}
+
+  #place_caution{
+    width: 800px;
+    height: 70px;
+    border: solid 1px #707070;
+    background-color: #ffffff;
+    margin-bottom : 10px;
+}
+
+  #place_address{
+    width: 800px;
+    height: 70px;
+    border: solid 1px #707070;
+    background-color: #ffffff;
+    margin-bottom : 10px;
+}
+
+#place_price{
+    width: 800px;
+    height: 70px;
+    border: solid 1px #707070;
+    background-color: #ffffff;
+    margin-bottom : 10px;
+}
+  #submit-btn{
+    width: 450px;
+    height: 70px;
+    border: solid 1px #707070;
+    background-color: #f65656;
+    margin-top : 5px;
+    transform: translateX(25%);
+  }
