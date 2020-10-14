@@ -6,6 +6,7 @@
             <meta charset="UTF-8">
             <title>Place_register</title>
             <link rel="stylesheet" href="{% static 'css/place.css' %}">
+            <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
         </head>
         <body>
             <p style="color: #898989; font: size 15px; font-weight:700; position:absolute; left:80%;" >*는 필수입력 요소입니다.</p>
@@ -29,6 +30,19 @@
                         <input type="image" name="place_image" id="place_image" required>
                     </div>
                     <div>
+                        <script>
+                            $.ajax({
+                                method: "GET",
+                                url: "https://dapi.kakao.com/v2/local/search/address.json",
+                                data: { query:"전북 삼성동 100"},
+                                headers: {Authorization: "KakaoAK 575ea86bd1e31efeda81833b404fe1a9"},
+                            })
+                                .done(function( msg ) {
+                                  console.log(msg.documents[0].address_name);
+                                  $( "p" ).append( "<strong>"+msg.documents[0].address_name+"</strong>" );
+                                });
+                        </script>
+                        <p></p>>
                         <label style="color:#f65656; font-weight:700; font-size:18px;">주소*</label><br>
                         <input type="text" name="place_address" placeholder="주소를 입력해주세요" id="place_address" required>
                     </div>
