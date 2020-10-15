@@ -38,6 +38,15 @@
     margin-bottom : 10px;
 }
 
+#place_postcode{
+  width: 800px;
+  height: 70px;
+  border: solid 1px #707070;
+  background-color: #ffffff;
+  margin-bottom : 10px;
+}
+
+
 #place_price{
     width: 800px;
     height: 70px;
