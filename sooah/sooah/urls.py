@@ -6,5 +6,6 @@ import main1.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main1.views.home, name='home'),
+    path('nonmember/', main1.views.home1, name='home1'),
+    path('member/', main1.views.home2, name='home2'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
