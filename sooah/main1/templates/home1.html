@@ -6,7 +6,7 @@
 {% load static %}
 
 <head>
-    {% block content-home2-1 %}
+    {% block content-home1 %}
     <title>L.FUN! 홈</title>
     <link rel="stylesheet" href="{% static 'css/home2.css' %}">
     <script>
@@ -30,13 +30,13 @@
 <body>
 
     <nav class="nav-container">
-            {% block content-home1 %}
+            {% block content-home3 %}
             <a class="nav-item info" href="">로그인</a>
             <a class="nav-item info" href="">회원가입</a>
             {% endblock %}
     </nav>
 
-    {% block content-home2-2 %}
+    {% block content-home2 %}
     <!-- 정렬 -->
     <div class="arr-box">
         <span class="arr arr1">
