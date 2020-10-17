@@ -30,7 +30,7 @@
             });
         });
     </script>
-    {% block content1 %}
+    {% block content-home2-1 %}
     {% endblock %}
 </head>
 
@@ -50,8 +50,10 @@
             </form>
             <a class="nav-item apply" href="">장소 등록 신청</a>
             <a class="nav-item apply apply2" href="">펀딩 오픈 신청</a>
+            {% block content-home1 %}
             <a class="nav-item info" href="">내 정보</a>
             <a class="nav-item info" href="">로그아웃</a>
+            {% endblock %}
         </div>
 
     </nav>
@@ -67,7 +69,7 @@
             <li><a class="menu-content" href="">고객센터</a></li>
         </ul>
     </span>
-    {% block content2 %}
+    {% block content-home2-2 %}
     {% endblock %}
 </body>
 

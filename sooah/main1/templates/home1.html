@@ -1,0 +1,114 @@
+<!-- 로그인 후, 메인페이지 -->
+
+<!-- 사용한 색상 : #7A7878(진한 회색) #E60012(빨강) #9e9a9a(회색) black-->
+<!-- 사용한 폰트 : Kanit(로고) / Gothic A1(내용) -->
+{% extends 'base.html' %}
+{% load static %}
+
+<head>
+    {% block content-home2-1 %}
+    <title>L.FUN! 홈</title>
+    <link rel="stylesheet" href="{% static 'css/home2.css' %}">
+    <script>
+        $(document).ready(function(){ // html dom 이 다 로딩된 후 실행된다.
+            // 정렬 펼치기
+            $(".arr>span").click(function() {  // arr 클래스 바로 하위에 있는 span 태그를 클릭했을때
+                var submenu = $(this).next("ul");
+                // submenu 가 화면상에 보일때는 위로 부드랍게 접고 아니면 아래로 부드랍게 펼치기
+                if( submenu.is(":visible") ){
+                    submenu.slideUp();
+                    menu.animate({right: "30"},1);
+                }else{
+                    submenu.slideDown();
+                }
+            });
+        });
+    </script>
+    {% endblock %}
+</head>
+
+<body>
+
+    <nav class="nav-container">
+            {% block content-home1 %}
+            <a class="nav-item info" href="">로그인</a>
+            <a class="nav-item info" href="">회원가입</a>
+            {% endblock %}
+    </nav>
+
+    {% block content-home2-2 %}
+    <!-- 정렬 -->
+    <div class="arr-box">
+        <span class="arr arr1">
+            <span style="cursor:pointer">전체<i class="fas fa-caret-down"></i></span>
+            <ul class="arr-list">
+                <li><a class="menu-content" href="">전체</a></li>
+                <li><a class="menu-content" href="">공연</a></li>
+                <li><a class="menu-content" href="">연극</a></li>
+                <li><a class="menu-content" href="">장소</a></li>
+            </ul>
+        </span>
+       
+        <span class="arr arr2">
+            <span style="cursor:pointer">인기순<i class="fas fa-caret-down"></i></span>
+            <ul class="arr-list">
+                <li><a class="menu-content" href="">최신순</a></li>
+                <li><a class="menu-content" href="">오래된순</a></li>
+                <li><a class="menu-content" href="">마감순</a></li>
+                <li><a class="menu-content" href="">인기순</a></li>
+            </ul>
+        </span>
+    </div>
+    
+    <!-- 포스팅 글 -->
+    <div class="fund-content">
+
+        <div class="left">
+            <img class="left-poster" src="{% static 'image/poster.png' %}">
+            <p class="left-title">옥탑방 고양이들</p>
+        </div>
+
+
+        <div class="center">
+            <div>
+                <span class="center-type">연극</span>
+                <span class="center-chari">출연진</span>
+            </div>
+
+            <p class="center-genre"> 코미디, 로맨스</p>
+            <p class="center-age"> 만 13세 이상 관람가능</p>
+            <p class="center-time"> 러닝타임: 100분 </p>
+
+            <div class="center-box1">
+                <span class="center-pro1">펀딩 진행상황</span>
+                <span class="center-pro2">종료까지 5일</span>
+                <p class="center-pro3">성공까지 6% 남음</p>
+            </div>
+
+            <div class="center-box2">
+                <span class="center-pro3">모금액</span>
+                <span class="center-pro4">0,000,000원</span>
+            </div>
+
+            <div class="center-box3">
+                <span class="center-pro3">목표액</span>
+                <span class="center-pro5">0,000,000원</span>
+            </div>
+        </div>
+
+        <div class="right">
+            <p class="right-title">9년 연속 1위!
+                예약 별점 평균 9.6점의 명작 연극을 집에서 만나보세요!
+            </p>
+            <p class="right-intro">소개</p>
+            <p class="right-content">
+                서울 종로구 창신동, 보증금 500월세 30! 서울 시내가 다 보이는 옥탑방! 보증금 다 박고 서울 상경한 작가 지망생 정은과 월세 선불 내고 집 나온 건축학도 경민! 이중계약으로 엮인 두 청춘남녀의 버라이어티한 옥탑방 로맨스!
+            </p>
+            <a class="right-content right-link">...더 알아보기</a>
+        </div>
+
+    </div>
+    {% endblock %}
+</body>
+
+</html>
