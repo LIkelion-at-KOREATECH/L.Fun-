@@ -1,0 +1,132 @@
+{% load staticfiles %}
+<head>
+    <title>홈</title>
+    <!-- FontAwesome 아이콘 적용 -->
+    <link href="static/css/home1.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- 구글폰트 적용-->
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=Kanit:wght@600&display=swap" rel="stylesheet">
+     
+    <!-- js qeury / 참고:https://stove99.tistory.com/103-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script>
+        
+        $(document).ready(function(){ // html dom 이 다 로딩된 후 실행된다.
+            // 메뉴 펼치기
+            $(".menu>i").click(function() {  // memu 클래스 바로 하위에 있는 i 태그를 클릭했을때
+                var submenu = $(this).next("ul");
+                // submenu 가 화면상에 보일때는 위로 부드랍게 접고 아니면 아래로 부드랍게 펼치기
+                if( submenu.is(":visible") ){
+                    submenu.slideUp();
+                    menu.animate({right: "30"},1);
+                }else{
+                    submenu.slideDown();
+                }
+            });
+            // 정렬1 펼치기
+            $(".arr>span").click(function() {  // arr1 클래스 바로 하위에 있는 span 태그를 클릭했을때
+                var submenu = $(this).next("ul");
+                // submenu 가 화면상에 보일때는 위로 부드랍게 접고 아니면 아래로 부드랍게 펼치기
+                if( submenu.is(":visible") ){
+                    submenu.slideUp();
+                    menu.animate({right: "30"},1);
+                }else{
+                    submenu.slideDown();
+                }
+            });
+        });
+
+        // 정렬 펼치기
+    </script>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="nav-container">
+
+        <div class="nav-div1">
+            <a class="nav-title" href="">L.FUN!</a>
+        </div>
+
+        <div class="nav-div2">
+            <form class="nav-item search-box" action="" method="">
+                <input id="" type="text" name="search" maxlength="20" placeholder="찾고싶은 공연이 있다면?">
+                <button type="submit"><i class="fas fa-search fa-lg"></i></button>
+            </form>
+            <a class="nav-item apply" href="">장소 등록 신청</a>
+            <a class="nav-item apply apply2" href="">펀딩 오픈 신청</a>
+            <a class="nav-item info" href="">내 정보</a>
+            <a class="nav-item info" href="">로그아웃</a>
+        </div>
+
+    </nav>
+
+    <!-- 메뉴 펄치기 -->
+    <span class="menu">
+        <i class="fas fa-align-justify" style="cursor:pointer"></i>
+        <ul class="menu-list">
+            <li><a class="menu-content" href="">참여한 펀딩</a></li>
+            <li><a class="menu-content" href="">장소 대여 신청</a></li>
+            <li><a class="menu-content" href="">소개</a></li>
+            <li><a class="menu-content" href="">이용약관</a></li>
+            <li><a class="menu-content" href="">고객센터</a></li>
+        </ul>
+    </span>
+
+    <!-- 정렬 -->
+    <div class="arr-box">
+        <span class="arr arr1">
+            <span style="cursor:pointer">전체<i class="fas fa-caret-down"></i></span>
+            <ul class="arr-list">
+                <li><a class="menu-content" href="">A</a></li>
+                <li><a class="menu-content" href="">B</a></li>
+                <li><a class="menu-content" href="">C</a></li>
+            </ul>
+        </span>
+       
+        <span class="arr arr2">
+            <span style="cursor:pointer">인기순<i class="fas fa-caret-down"></i></span>
+            <ul class="arr-list">
+                <li><a class="menu-content" href="">A</a></li>
+                <li><a class="menu-content" href="">B</a></li>
+                <li><a class="menu-content" href="">C</a></li>
+            </ul>
+        </span>
+    </div>
+    
+    <div class="fund-content">
+        <div class="left">
+            <img class="left-poster" src="static/image/poster.png">
+            <p class="left-title">옥탑방 고양이들</p>
+        </div>
+
+        <div class="center">
+            <div>
+                <span class="center-genre">연극</span>
+                <span class="center-chari">출연진</span>
+            </div>
+            <p> 코미디, 로맨스</p>
+            <p> 만 13세 이상 관람가능</p>
+            <p> 러닝타임: 100분 </p>
+            <div>
+                <span>펀딩 진행상황</span>
+                <span>종료까지 5일</span>
+            </div>
+            <p>성공가지 6% 남음</p>
+            <p>모금액 <span>0,000,000원</span></p>
+            <p>목표액 0,000,000원</p>
+        </div>
+
+        <div class="right">
+            <p>9년 연속 1위!
+                예약 별점 평균 9.6점의 명작 연극을 집에서 만나보세요!
+            </p>
+            <p>소개</p>
+            <p>
+                서울 종로구 창신동, 보증금 500월세 30! 서울 시내가 다 보이는 옥탑방! 보증금 다 박고 서울 상경한 작가 지망생 정은과 월세 선불 내고 집 나온 건축학도 경민! 이중계약으로 엮인 두 청춘남녀의 버라이어티한 옥탑방 로맨스!
+            </p>
+            <a>...더 알아보기</a>
+        </div>
+    </div>
+    
+</body>
+</html>
