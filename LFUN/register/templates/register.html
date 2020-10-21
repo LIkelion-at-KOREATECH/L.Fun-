@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}{% static 'css/register.css' %}{% endblock %}
+
+   {%block content%}
+   <body></body>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="input-element">
+                <div>
+                    <h1 style="font-family: NanumSquare; margin-bottom:30px;">프로젝트 설정</h1>
+                </div>
+                <div>
+                    <label style="color:#707070; font-weight:700; font-size:18px;">프로젝트 제목</label><br>
+                    <input type="text" name="project_name" placeholder="프로젝트 제목을 입력해주세요" id="project_name" required>
+                </div>
+                <div>
+                    <label style="color:#707070; font-weight:700; font-size:18px;">프로젝트 상세 설명</label><br>
+                    <input type="text" name="project_introduce" placeholder="프로젝트를 설명해주세요" id="project_introduce" required>
+                </div>
+                <div>
+                    <label style="color:#707070; font-weight:700; font-size:18px;">프로젝트 타이틀 사진</label><br>
+                    <input type="file" name="project_image" id="project_image"   style="margin : 10px; " required >
+                </div>
+                <div>
+                    <label style="color:#707070; font-weight:700; font-size:18px;">프로젝트 카테고리</label><br>
+                    <select name="project_category" id="project_category" style="margin: 10px; width:100px; height:20px;">
+                        <option value="1">연극</option>
+                        <option value="2">공연</option>
+                    </select>
+                </div>
+                <div>
+                    <h1 style="font-family: NanumSquare; margin-bottom:30px;">펀딩 설정</h1>
+                </div>
+                <div>
+                    <label style="color:#707070; font-weight:700; font-size:18px;">펀딩 목표 금액 : </label>
+                    <input type="text" name="funding_price" placeholder="펀딩 목표 금액을 설정해주세요" id="funding_price" required>
+                </div>
+                <div>
+                    <label style="color:#707070; font-weight:700; font-size:18px;">펀딩 시작일 : </label>
+                    <input type="text" name="funding_startday" placeholder="MM/DD" id="funding_startday" maxlength="4" required>
+                     <h style="color:#707070; font-weight:700;">일</h>
+                    <input type="text" name="funding_starttime" placeholder="00:00" id="funding_starttime"  maxlength="4" required>
+                     <h style="color:#707070; font-weight:700;">에 펀딩을 시작합니다.</h>
+                </div>
+                <div>
+                    <label style="color:#707070; font-weight:700; font-size:18px;">펀딩 마감일 : </label>
+                    <input type="text" name="funding_endday" placeholder="MM/DD" id="funding_endday"  maxlength="4" required>
+                     <h style="color:#707070; font-weight:700;">일</h>
+                    <input type="text" name="funding_endtime" placeholder="00:00" id="funding_endtime" maxlength="4" required>
+                     <h style="color:#707070; font-weight:700;">에 펀딩을 마감합니다.</h>
+                </div>
+                <div>
+                    <h1 style="font-family: NanumSquare; margin-bottom:30px;">리워드 설정</h1>
+                </div>
+                <div>
+                    <label style="color:#707070; font-weight:700; font-size:18px;">티켓 금액 : </label>
+                    <input type="text" name="project_ticketprice" placeholder="티켓 금액을 설정해주세요" id="project_ticketprice" required>
+                </div>
+                <div>
+                    <h1 style="font-family: NanumSquare; margin-bottom:30px;">계좌 설정</h1>
+                </div>
+                <div>
+                    <label style="color:#707070; font-weight:700; font-size:18px;">계좌은행 : </label>
+                    <input type="text" name="funding_bank" placeholder="계좌은행 ex) 신한은행" id="funding_bank" required>
+                </div>
+                <div>
+                    <label style="color:#707070; font-weight:700; font-size:18px;">계좌번호 : </label>
+                    <input type="text" name="funding_account" placeholder="계좌번호 (-를 생략하고 입력해주세요)" id="funding_account" required>
+                </div>
+                <div>
+                <button type="submit" id="next-btn" style="color:red; font-size:20px; position: absolute; left: 90%; width:15px;">다음</button>
+                </div>
+            </div>
+        </form>
+   </body>
+
+   {%endblock%}
