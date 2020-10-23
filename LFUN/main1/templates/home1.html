@@ -48,7 +48,7 @@
     <div class="fund-content">
 
         <div class="left-place">
-            <a class="left-link" href="{% url 'posting1' %}">
+            <a class="left-link" href="{% url 'posting1' pk=place_place.id %}">
                 <img class="left-poster-place" src="{{ place.place_image.url }}" alt="{{ place.place_name }}">
                 <p class="left-title">{{ place.place_name }}</p>
             </a>
