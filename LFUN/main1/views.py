@@ -10,11 +10,10 @@ def home2(request):
     places = Place.objects
     return render(request, 'home2.html', {'places':places})
 
-def posting1(request, place_place_id):
-    #places = Place.objects
-    place_detail = get_object_or_404(Place, pk=place_place_id)
-    return render(request, 'posting1.html', {'place_detail':place_detail})
+def posting1(request, pk):
+    places = get_object_or_404(Place, pk=pk)
+    return render(request, 'posting1.html', {'places':places})
 
-def posting2(request):
-    places = Place.objects
+def posting2(request, pk):
+    places = get_object_or_404(Place, pk=pk)
     return render(request, 'posting2.html', {'places':places})

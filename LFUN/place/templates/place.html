@@ -4,10 +4,11 @@
 {% block title %} Place register {% endblock %}
 {% block link %} {% static 'css/place.css' %} {% endblock %}
 
-    {%block content-place%}
-        <body>
-            <h style="color: #898989; font: size 15px; font-weight:700; position:absolute; left:80%; margin-top: 5px;" >*는 필수입력 요소입니다.</h>
-            <form action="{% url 'home2'%}" method="POST" enctype="multipart/form-data">
+
+    
+            {%block content-place%}
+            <h style="color: #898989; font: size 15px; font-weight:700; position:absolute; left:75%; margin-top: 5px;" >*는 필수입력 요소입니다.</h>
+            <form action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="input-element">
                     <div>
@@ -40,5 +41,5 @@
                     <button type="submit" id="submit-btn" style="color:white; font-size:20px;">등록하기</button>
                 </div>
             </form>
-        </body>
+        
     {% endblock %}

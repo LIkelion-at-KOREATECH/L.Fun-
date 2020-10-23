@@ -2,17 +2,6 @@
  
 <!-- 사용한 색상 : #7A7878(진한 회색) #E60012(빨강) #9e9a9a(회색) black-->
 <!-- 사용한 폰트 : Kanit(로고) / Gothic A1(내용) -->
-
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %} 자세히 보기 {% endblock %}
-{% block link %} {% static 'css/posting2.css' %} {% endblock %}
-{% block content-home1 %}
-    <a class="nav-item info" href="">로그인</a>
-    <a class="nav-item info" href="">회원가입</a>
-{% endblock %}
-
 <!--  
     place_introduce
     place_caution 
@@ -23,16 +12,26 @@
     place_extraAddress
     place_price
     registered_dttm  -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} 자세히 보기 {% endblock %}
+{% block link %} {% static 'css/posting2.css' %} {% endblock %}
+{% block content-home1 %}<a class="nav-item info" href="">로그인</a><a class="nav-item info" href="">회원가입</a>{% endblock %}
+{% block logo %}<a class="nav-title" href="{% url 'home1' %}">L.FUN!</a>{% endblock %}
+
 
     {% block content-home2 %}
-    
+
+    my : {{place}}    <br>
+    my.id : {{place.id}}<br>
+    place.id : {{place.id}} <br>
     <!-- 포스팅 글(간단히) -->
-    {% if places %}
-    {% for place in places.all %}
+    {% if my_place %}
     <div class="fund-content1">
 
         <div class="left">
-            <img class="left-poster" src="{% static 'image/poster.png' %}">
+            <img class="left-poster" src="{{ my_place.place_image.url }}">
             <p class="left-age"> 만 13세 이상 관람가능</p>
             <p class="left-time"> 러닝타임: 100분 </p>
         </div>
@@ -81,8 +80,10 @@
         <p class="c3-list"><i class="fas fa-circle"></i>모금액의 0.001% 이상 펀딩할 시, 펀딩액 3% 할인 쿠폰이 발급됩니다.</p>
         <p class="c3-list"><i class="fas fa-circle"></i>3개의 펀딩에 참여할 때마다, 펀딩액 1% 할인 쿠폰이 발급됩니다.</p>
     </div>
-{% endfor %}
     {% endif %}
+
+    <!-- {% for place in my_placec.all %} -->
+    <!-- {% endfor %} -->
 
 
     <!-- 포스팅 글(간단히) -->

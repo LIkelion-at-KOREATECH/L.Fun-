@@ -33,6 +33,8 @@
             });
         });
     </script>
+
+    
     <script>// 장소 신청 페이지에 사용 place.html
         function execDaumPostcode() {
             new daum.Postcode({
@@ -105,7 +107,9 @@
     <nav class="nav-container">
 
         <div class="nav-div1">
-            <a class="nav-title" href="">L.FUN!</a>
+            {% block logo %}
+            <a class="nav-title" href="{% url 'home2' %}">L.FUN!</a>
+            {% endblock %}
         </div>
 
         <div class="nav-div2">
@@ -113,7 +117,7 @@
                 <input id="" type="text" name="search" maxlength="20" placeholder="찾고싶은 공연이 있다면?">
                 <button type="submit"><i class="fas fa-search fa-lg"></i></button>
             </form>
-            <a class="nav-item apply" href="">장소 등록 신청</a>
+            <a class="nav-item apply" href="{% url 'place' %}">장소 등록 신청</a>
             <a class="nav-item apply apply2" href="">펀딩 오픈 신청</a>
             {% block content-home1 %}
             <a class="nav-item info" href="">내 정보</a>
@@ -128,7 +132,6 @@
         <i class="fas fa-align-justify" style="cursor:pointer"></i>
         <ul class="menu-list">
             <li><a class="menu-content" href="">참여한 펀딩</a></li>
-            <li><a class="menu-content" href="">장소 대여 신청</a></li>
             <li><a class="menu-content" href="">소개</a></li>
             <li><a class="menu-content" href="">이용약관</a></li>
             <li><a class="menu-content" href="">고객센터</a></li>

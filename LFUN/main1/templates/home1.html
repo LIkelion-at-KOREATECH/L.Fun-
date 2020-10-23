@@ -8,10 +8,8 @@
 
 {% block title %} L.FUN! 홈 {% endblock %}
 {% block link %} {% static 'css/home2.css' %} {% endblock %}
-{% block content-home1 %}
-    <a class="nav-item info" href="">로그인</a>
-    <a class="nav-item info" href="">회원가입</a>
-{% endblock %}
+{% block logo %}<a class="nav-title" href="{% url 'home1' %}">L.FUN!</a>{% endblock %}
+{% block content-home1 %}<a class="nav-item info" href="">로그인</a><a class="nav-item info" href="">회원가입</a>{% endblock %}
 
     {% block content-home2 %}
     <!-- 정렬 -->
@@ -40,7 +38,6 @@
     <!-- <h3 id="none-result" style="text-align: center; margin-top:100px;">결과가 없습니다.</h3> -->
 
     <!-- 포스팅 글 -->
-    <!-- caution / postcode /  / dttm -->
     
     <!-- 장소 포스팅 -->
     {% if places %}
@@ -48,7 +45,7 @@
     <div class="fund-content">
 
         <div class="left-place">
-            <a class="left-link" href="{% url 'posting1' pk=place_place.id %}">
+            <a class="left-link" href="{% url 'posting1' place.id %}">            
                 <img class="left-poster-place" src="{{ place.place_image.url }}" alt="{{ place.place_name }}">
                 <p class="left-title">{{ place.place_name }}</p>
             </a>
@@ -57,7 +54,7 @@
             <p class="right-title">소개</p>
             <!-- linebreaksbr는 줄바꿈 인식하는 필터 -->
             <p class="right-content"> {{ place.summary|linebreaksbr }}</p>
-            <a class="right-content right-link" href="{% url 'posting1' %}">...자세히</a>
+            <a class="right-content right-link" href="{% url 'posting1' place.id %}">...자세히</a>
             <p class="right-title">주소</p>
             <p class="right-content2">
                 {{ place.place_address }}<br>{{ place.place_detailAddress }}
@@ -74,54 +71,7 @@
     {% endif %}
     
 
-    <!-- 펀딩 포스팅( 추가 필요) -->
-    <!-- <div class="fund-content">
-
-        <a class="left" href="{% url 'posting1' %}">
-            <img class="left-poster" src="{{ place.place_image.url }}" alt="{{ place.place_name }}">
-            <p class="left-title">{{ place.place_name }}</p>
-        </a>
-        
-
-        <div class="center">
-            <div>
-                <span class="center-type">연극</span>
-                <span class="center-chari">출연진</span>
-            </div>
-
-            <p class="center-genre">코미디, 로맨스</p>
-            <p class="center-age"> 만 13세 이상 관람가능</p>
-            <p class="center-time"> 러닝타임: 100분 </p>
-
-            <div class="center-box1">
-                <span class="center-pro1">펀딩 진행상황</span>
-                <span class="center-pro2">종료까지 5일</span>
-                <p class="center-pro3">성공까지 6% 남음</p>
-            </div>
-
-            <div class="center-box2">
-                <span class="center-pro3">모금액</span>
-                <span class="center-pro4">0,000,000원</span>
-            </div>
-
-            <div class="center-box3">
-                <span class="center-pro3">목표액</span>
-                <span class="center-pro5">0,000,000원</span>
-            </div>
-        </div>
-
-        <div class="right">
-            <p class="right-title">9년 연속 1위!
-                예약 별점 평균 9.6점의 명작 연극을 집에서 만나보세요!
-            </p>
-            <p class="right-intro">소개</p>
-            <p class="right-content">
-                서울 종로구 창신동, 보증금 500월세 30! 서울 시내가 다 보이는 옥탑방! 보증금 다 박고 서울 상경한 작가 지망생 정은과 월세 선불 내고 집 나온 건축학도 경민! 이중계약으로 엮인 두 청춘남녀의 버라이어티한 옥탑방 로맨스!
-            </p>
-            <a class="right-content right-link" href="{% url 'posting1' %}">...더 알아보기</a>
-        </div>
-
-    </div> -->
+    
     
 
     <div style="margin-bottom:100px;"></div>

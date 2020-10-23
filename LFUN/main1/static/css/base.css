@@ -125,10 +125,11 @@ button {
     background-color: white;
     border: 3px solid #9e9a9a;
     border-radius: 1rem;
-    height: 9rem;
+    height: 5rem;
     padding: 10px;
     text-align: center;
     color: black;
+    z-index: 1;
 }
 
 .menu-content:visited {
