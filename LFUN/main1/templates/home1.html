@@ -13,6 +13,7 @@
     <a class="nav-item info" href="">회원가입</a>
 {% endblock %}
 
+
 <body>
     {% block content-home2 %}
     <!-- 정렬 -->
@@ -39,13 +40,18 @@
     </div>
     
     <!-- 포스팅 글 -->
+    
     <div class="fund-content">
-
         <a class="left" href="{% url 'posting2' %}">
-            <img class="left-poster" src="{% static 'image/poster.png' %}">
-            <p class="left-title">옥탑방 고양이들</p>
+            <!-- <img class="left-poster" src="{% static 'image/poster.png' %}"> -->
+            {% for post in posts.all %}
+            <img class="left-poster" src="{{ post.place_image.url }}" alt="{{ post.place_name }}">
+            <p class="left-title">{{ post.place_name }}</p>
+            {% endfor %}
+            
+            <!-- 옥탑방 고양이들 -->
         </a>
-
+        
 
         <div class="center">
             <div>
