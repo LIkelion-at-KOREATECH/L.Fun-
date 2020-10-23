@@ -16,3 +16,6 @@ class Place(models.Model):
 
     def __str__(self):
         return self.place_name
+
+    def summary(self):
+        return self.place_introduce[:100]

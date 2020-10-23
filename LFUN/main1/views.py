@@ -1,19 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from place.models import Place
 
 # Create your views here.
 def home1(request):
-    posts = Place.objects
-    return render(request, 'home1.html', {'posts':posts})
+    places = Place.objects
+    return render(request, 'home1.html', {'places':places})
 
 def home2(request):
-    posts = Place.objects,
-    return render(request, 'home2.html', {'posts':posts})
+    places = Place.objects
+    return render(request, 'home2.html', {'places':places})
 
 def posting1(request):
-    posts = Place.objects
-    return render(request, 'posting1.html', {'posts':posts})
+    places = Place.objects
+    return render(request, 'posting1.html', {'places':places})
 
 def posting2(request):
-    posts = Place.objects
-    return render(request, 'posting2.html', {'posts':posts})
+    places = Place.objects
+    return render(request, 'posting2.html', {'places':places})
