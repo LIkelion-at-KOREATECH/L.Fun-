@@ -1,0 +1,183 @@
+/* 정렬 선택*/
+.arr-box {
+    border-bottom: 1px solid #7A7878;
+    margin-top: 7%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fa-caret-down {
+    color: #000000;
+}
+
+.arr1 {
+    position: absolute;
+    top: 20%;
+    left: 80%;
+}
+
+.arr2 {
+    position: absolute;
+    top: 20%;
+    left: 85%;
+}
+
+.arr .arr-list {
+    /* 새로고침하면 닫힌 상태 */
+    display: none;
+    /* 각 줄의 높이 */
+    line-height: 1.8;
+    list-style: none;
+    background-color: #ffffff;
+    border: 3px solid #9e9a9a;
+    border-radius: 1rem;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    height: 110px;
+}
+
+.menu-content:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.menu-content:active {
+    text-decoration: none;
+    color: black;
+}
+
+/* --------------------------------------------------------------------- */
+
+/* 펀딩글 내용 */
+.fund-content {
+    display: flex;
+    margin-top: 3%;
+    justify-content: center;
+}
+
+/* 왼쪽 */
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+}
+
+.left:visited {
+    color: #000000;
+}
+
+.left-poster {
+    width: 80%;
+    height: auto;
+}
+
+.left-title {
+    margin-top: 4%;
+    font-size: 1.3rem;
+    font-weight: 900;
+    justify-content: center;
+}
+
+/* 가운데 */
+.center {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    color: #9e9a9a;
+    font-weight: 750;
+}
+
+.center-type,
+.center-chari {
+    border: 1px solid #E60012;
+    padding: 2% 5%;
+    color: #E60012;
+}
+
+.center-genre {
+    font-size: 1.5rem;
+    margin-top: 5%;
+    margin-bottom: 0;
+    color: #000000;
+}
+
+.center-age,
+.center-time {
+    font-size: 0.8rem;
+    margin: 1%;
+}
+
+.center-box1 {
+    margin-top: 8%;
+}
+
+.center-box2,
+.center-box3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.center-pro1 {
+    margin-right: 5%;
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+.center-pro2 {
+    font-size: 0.8rem;
+}
+
+.center-pro3 {
+    font-size: 0.8rem;
+    margin: 3% 0 0 0;
+    vertical-align: center;
+}
+
+.center-pro4 {
+    color: #E60012;
+    font-size: 1.4rem;
+    vertical-align: center;
+    padding-right: 10%;
+}
+
+.center-pro5 {
+    color: #7A7878;
+    font-size: 1rem;
+    padding-right: 10%;
+}
+
+/* 오른쪽 */
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    color: #000000;
+}
+
+.right-title {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+.right-intro {
+    margin-top: 10%;
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+.right-content {
+    margin: 0;
+    font-weight: 500;
+    margin-left: 3%;
+    /* 줄간격 */
+    line-height: 150%;
+}
+
+.right-link {
+    color: #9e9a9a;
+    cursor: pointer;
+}
