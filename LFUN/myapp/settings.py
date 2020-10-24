@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'signinup',
+    'main1.apps.Main1Config', # 홈
+    'place', # 장소신청
+
 
     # 소셜로그인
     'django.contrib.sites',
@@ -67,7 +70,7 @@ ROOT_URLCONF = 'myapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['myapp/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,6 +135,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS= [
+        os.path.join(BASE_DIR, 'place', 'static'),# static파일 들어있는 경로
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')    # static파일 모을 위치
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 AUTH_USER_MODEL = 'signinup.User'
 
 SILENCED_SYSTEM_CHECKS = ['auth.E003']
@@ -144,4 +155,4 @@ UNTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/success'
+LOGIN_REDIRECT_URL = '/main/member'

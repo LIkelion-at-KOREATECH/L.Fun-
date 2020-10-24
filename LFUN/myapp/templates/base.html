@@ -1,0 +1,182 @@
+{% load static %}
+<!-- 사용한 색상 : #7A7878(진한 회색) #E60012(빨강) #9e9a9a(회색) black-->
+<!-- 사용한 폰트 : Kanit(로고) / Gothic A1(내용) -->
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% block link %} {% endblock %}">
+    <!-- FontAwesome 아이콘 적용 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- 구글폰트 적용-->
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=Kanit:wght@600&display=swap" rel="stylesheet">
+    
+        {% block style %} {% endblock %}
+
+    <!-- 홍준쓰가 추가한거 -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <!-- js qeury / 참고:https://stove99.tistory.com/103-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script>// 메뉴 펼치기 기능 - home1.html, home2.html, posting1.html, posting2.html에 사용
+        $(document).ready(function(){ // html dom 이 다 로딩된 후 실행된다.
+            $(".menu>i").click(function(){  // memu 클래스 바로 하위에 있는 i 태그를 클릭했을때
+                var submenu = $(this).next("ul");
+                // submenu 가 화면상에 보일때는 위로 부드랍게 접고 아니면 아래로 부드랍게 펼치기
+                if( submenu.is(":visible") ){
+                    submenu.slideUp();
+                    menu.animate({right: "30"},1);
+                }else{
+                    submenu.slideDown();
+                }
+            });
+        });
+    </script>
+
+    
+    <script>// 장소 신청 페이지에 사용 place.html
+        function execDaumPostcode() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                    // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                    var addr = ''; // 주소 변수
+                    var extraAddr = ''; // 참고항목 변수
+
+                    //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                        addr = data.roadAddress;
+                    } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                        addr = data.jibunAddress;
+                    }
+
+                    // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                    if(data.userSelectedType === 'R'){
+                        // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                        // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                        if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                            extraAddr += data.bname;
+                        }
+                        // 건물명이 있고, 공동주택일 경우 추가한다.
+                        if(data.buildingName !== '' && data.apartment === 'Y'){
+                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                        }
+                        // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                        if(extraAddr !== ''){
+                            extraAddr = ' (' + extraAddr + ')';
+                        }
+                        // 조합된 참고항목을 해당 필드에 넣는다.
+                        document.getElementById("place_extraAddress").value = extraAddr;
+                    
+                    } else {
+                        document.getElementById("place_extraAddress").value = '';
+                    }
+
+                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                    document.getElementById('place_postcode').value = data.zonecode;
+                    document.getElementById("place_address").value = addr;
+                    // 커서를 상세주소 필드로 이동한다.
+                    document.getElementById("place_detailAddress").focus();
+                }
+            }).open();
+        }
+    </script>
+    <script>// 최신순/인기순 정렬 기능 - home1.html, home2.html에 사용
+        $(document).ready(function(){ // html dom 이 다 로딩된 후 실행된다.
+            // 정렬 펼치기
+            $(".arr>span").click(function() {  // arr 클래스 바로 하위에 있는 span 태그를 클릭했을때
+                var submenu = $(this).next("ul");
+                // submenu 가 화면상에 보일때는 위로 부드랍게 접고 아니면 아래로 부드랍게 펼치기
+                if( submenu.is(":visible") ){
+                    submenu.slideUp();
+                    menu.animate({right: "30"},1);
+                }else{
+                    submenu.slideDown();
+                }
+            });
+        });
+    </script>
+    
+     <style>
+        .nav-container {
+        display: table;
+        border-bottom: 1px solid #7A7878;
+        table-layout: fixed;
+        }
+
+        .nav-div1 {
+            display: table-cell;
+            vertical-align: middle;
+            width:300px;
+            white-space: nowrap;
+        }
+
+        .nav-div2 {
+            display: table-cell;
+            /* text-align: right; */
+            padding-right: 4rem;
+            padding-bottom: auto;
+            padding-top: auto;
+            vertical-align: middle;
+            width: 1000px;
+            white-space: nowrap;
+            /* overflow: hidden; */
+            }
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="nav-container">
+
+        <div class="overflow nav-div1">
+            {% block logo %}
+            <a class="nav-title" href="{% url 'home2' %}">L.FUN!</a>
+            {% endblock %}
+        </div>
+
+        <div class="overflow nav-div2">
+          
+            <form class="nav-item search-box " action="" method="">
+                <input id="" type="text" name="search" maxlength="20" placeholder="찾고싶은 공연이 있다면?">
+                <button type="submit"><i class="fas fa-search fa-lg"></i></button>
+            </form>
+            
+          
+            <a class="nav-item apply" href="{% url 'place' %}">장소 등록 신청</a>
+            <a class="nav-item apply apply2" href="">펀딩 오픈 신청</a>
+            
+            {% block content-home1 %}
+            <a class="nav-item info" href="">내 정보</a>
+            <a class="nav-item info" href="">로그아웃</a>
+            {% endblock %}
+        </div>
+
+    </nav>
+
+    <!-- 메뉴 펄치기 -->
+    <span id="menu" class="menu">
+        <i class="fas fa-align-justify" style="cursor:pointer"></i>
+        <ul class="menu-list">
+            <li><a class="menu-content" href="">참여한 펀딩</a></li>
+            <li><a class="menu-content" href="">소개</a></li>
+            <li><a class="menu-content" href="">이용약관</a></li>
+            <li><a class="menu-content" href="">고객센터</a></li>
+        </ul>
+    </span>
+    
+    <main>
+    {% block content %}
+    {% endblock %}
+    </main>
+    
+</body>
+
+</html>

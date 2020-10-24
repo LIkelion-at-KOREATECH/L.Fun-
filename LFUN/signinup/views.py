@@ -9,9 +9,6 @@ from django.contrib.auth import login
 def first(request):
     return render(request,'first.html')
 
-def success(request):
-    return render(request,'success.html')
-
 def signin(request):
     if request.method == "POST":
         email = request.POST.get('email')
@@ -20,7 +17,7 @@ def signin(request):
         if user is not None:
             print("인증 성공")
             auth.login(request, user)
-            response = render(request, 'success.html')
+            response = render(request, 'home2.html')
             response.set_cookie('email', email)
             response.set_cookie('password', password)
             return response
