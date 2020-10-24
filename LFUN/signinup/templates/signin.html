@@ -1,5 +1,6 @@
 <!-- 로그인 페이지 -->
 {% load static %}
+{% load socialaccount %}
 <!DOCTYPE html>
 <link rel="stylesheet" href="{% static 'css/signin.css' %}">
 {% if user.is_authenticated %}
@@ -14,144 +15,177 @@
     <link rel="stylesheet" href="{% static 'css/signin.css' %}">
         <style>
             /* navbar */
-    .nav-container {
-        display: table;
-        width: 100%;
-        border-bottom: 1px solid #7A7878;
-    }
+                .nav-container {
+                    display: table;
+                    width: 100%;
+                    border-bottom: 1px solid #7A7878;
+                }
 
-    .nav-div1 {
-        display: table-cell;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        vertical-align: middle;
-    }
+                .nav-div1 {
+                    display: table-cell;
+                    padding-top: 0.5rem;
+                    padding-bottom: 0.5rem;
+                    vertical-align: middle;
+                }
 
-    .nav-div2 {
-        display: table-cell;
-        text-align: right;
-        padding-right: 4rem;
-        padding-bottom: auto;
-        padding-top: auto;
-        vertical-align: middle;
-    }
+                .nav-div2 {
+                    display: table-cell;
+                    text-align: right;
+                    padding-right: 4rem;
+                    padding-bottom: auto;
+                    padding-top: auto;
+                    vertical-align: middle;
+                }
 
-    .nav-title {
-        margin-left: 1.5rem;
-        text-decoration: none;
-        width: 206px;
-        height: 70px;
-        font-family: 'Kanit', sans-serif;
-        font-size: 3rem;
-        font-weight: bold;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.17;
-        letter-spacing: normal;
-        text-align: left;
-        color: #E60012;
-    }
+                .nav-title {
+                    margin-left: 1.5rem;
+                    text-decoration: none;
+                    width: 206px;
+                    height: 70px;
+                    font-family: 'Kanit', sans-serif;
+                    font-size: 3rem;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.17;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: #E60012;
+                }
 
-    .nav-item {
-        color: #9e9a9a;
-        font-size: 1rem;
-        margin-left: 10px;
-        margin-top: auto;
-        margin-bottom: auto;
-        text-decoration: none;
-        font-weight: 600;
-    }
+                .nav-item {
+                    color: #9e9a9a;
+                    font-size: 1rem;
+                    margin-left: 10px;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    text-decoration: none;
+                    font-weight: 600;
+                }
 
-    .search-box {
-        border: solid 1px#9e9a9a;
-        padding-right: 100px;
-        text-align: left;
-        display: inline;
-        margin-right: 13rem;
-        padding: 0.7rem 0 0.7rem 0.3rem;
-    }
+                .search-box {
+                    border: solid 1px#9e9a9a;
+                    padding-right: 100px;
+                    text-align: left;
+                    display: inline;
+                    margin-right: 13rem;
+                    padding: 0.7rem 0 0.7rem 0.3rem;
+                }
 
-    input {
-        border: 0;
-        width: 300px;
-    }
+                input {
+                    border: 0;
+                    width: 300px;
+                }
 
-    input:focus {
-        outline: none;
-    }
+                input:focus {
+                    outline: none;
+                }
 
-    button {
-        border: 0;
-        width: 2rem;
-        background-color: white;
-    }
+                button {
+                    border: 0;
+                    width: 2rem;
+                    background-color: white;
+                }
 
-    .apply {
-        width: 262px;
-        height: 75px;
-        padding: 4px 13px;
-        border-radius: 20px;
-        border: solid 8px #E60012;
-        /* font-family: GillSansMT; */
-        font-size: 1rem;
-        font-weight: bold;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.17;
-        letter-spacing: normal;
-        text-align: left;
-        color: #E60012;
-    }
+                .apply {
+                    width: 262px;
+                    height: 75px;
+                    padding: 4px 13px;
+                    border-radius: 20px;
+                    border: solid 8px #E60012;
+                    /* font-family: GillSansMT; */
+                    font-size: 1rem;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.17;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: #E60012;
+                }
 
-    .apply2 {
-        margin-right: 5rem;
-    }
+                .apply2 {
+                    margin-right: 5rem;
+                }
 
-    /* navbar - menu */
-    .fa-align-justify {
-        color: #7A7878;
-    }
+                /* navbar - menu */
+                .fa-align-justify {
+                    color: #7A7878;
+                }
 
-    .menu {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        text-align: right;
-    }
+                .menu {
+                    position: absolute;
+                    top: 1.5rem;
+                    right: 1.5rem;
+                    text-align: right;
+                }
 
-    .menu .menu-list {
-        padding: 10px;
-        display: none;
-        line-height: 1.8;
-        list-style: none;
-        background-color: white;
-        border: 3px solid #9e9a9a;
-        border-radius: 1rem;
-        height: 9rem;
-        padding: 10px;
-        text-align: center;
-        color: black;
-    }
+                .menu .menu-list {
+                    padding: 10px;
+                    display: none;
+                    line-height: 1.8;
+                    list-style: none;
+                    background-color: white;
+                    border: 3px solid #9e9a9a;
+                    border-radius: 1rem;
+                    height: 9rem;
+                    padding: 10px;
+                    text-align: center;
+                    color: black;
+                }
 
-    .menu-content:visited {
-        text-decoration: none;
-        color: black;
-    }
+                .menu-content:visited {
+                    text-decoration: none;
+                    color: black;
+                }
 
-    .menu-content:active {
-        text-decoration: none;
-        color: black;
-    }
+                .menu-content:active {
+                    text-decoration: none;
+                    color: black;
+                }
 
-    .input-element {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        left: 50%;
-        margin-top: 150px;
-        transform: translateX(-50%);
-    }
-    
+                .input-element {
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    left: 50%;
+                    margin-top: 150px;
+                    transform: translateX(-50%);
+                }
+                .google {
+                    width: 410px;
+                    height: 70px;
+                }
+                .google:hover {
+                    color: #f65656;
+                    background-color: white;
+                    border: 3px solid  #f65656;
+                    border-radius: 10px;
+                }
+                .naver {
+                    width: 400px;
+                    height: 70px;
+                    margin-left: 5px;
+                }
+                .naver:hover {
+                    color: #f65656;
+                    background-color: white;
+                    border: 3px solid  #f65656;
+                    border-radius: 10px;
+                }
+                .line {
+                    width: 410px;
+                    height: 35px;
+                    margin-top: 20px;
+                }
+                .input-element {
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    left: 50%;
+                    margin-top: 30px;
+                    transform: translateX(-50%);
+                }
     </style>
     <!--navbar-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -228,6 +262,12 @@
                 </div>
                 <!--로그인 버튼-->
                 <button type="submit" id="submit-btn">로그인</button>
+                <br>
+                <img class="line" src="{% static 'image/line.png'%}">{{line}}</img>
+                <br>
+                <a href = " {% provider_login_url 'google' %}"><img src="{% static 'image/google_login1.png'%}" class="google"></a>
+                <br>
+                <a href = " {% provider_login_url 'naver' %}"><img src="{% static 'image/naver_login.png'%}" class="naver"></a>
             </div>
         </form>
     </body>

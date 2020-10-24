@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # 소셜로그인 provider
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.kakao',
+    'allauth.socialaccount.providers.naver',
 ]
 
 MIDDLEWARE = [

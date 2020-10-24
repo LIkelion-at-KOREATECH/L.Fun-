@@ -12,10 +12,19 @@
             .google {
                 width: 320px;
                 height: 70px;
-                border: 1px solid #f65656;
+            }
+            .google:hover {
+                color: #f65656;
+                background-color: white;
+                border: 3px solid  #f65656;
                 border-radius: 10px;
             }
-            .signin:hover {
+            .naver {
+                width: 310px;
+                height: 70px;
+                margin-left: 5px;
+            }
+            .naver:hover {
                 color: #f65656;
                 background-color: white;
                 border: 3px solid  #f65656;
@@ -37,9 +46,9 @@
                 <br>
                 <img class="line" src="{% static 'image/line.png'%}">{{line}}</img>
                 <br>
-                <a href = " {% provider_login_url 'google' %}"><img src="{% static 'image/google_login.png'%}" class="google"></a>
+                <a href = " {% provider_login_url 'google' %}"><img src="{% static 'image/google_login1.png'%}" class="google"></a>
                 <br>
-                <a href = " {% provider_login_url 'kakao' %}">카카오</a>
+                <a href = " {% provider_login_url 'naver' %}"><img src="{% static 'image/naver_login.png'%}" class="naver"></a>
             </span>
         </body>
     <footer>
