@@ -17,6 +17,8 @@
     <button type="submit"><i class="fas fa-search fa-lg"></i></button>
 </form>
 {% endblock %}
+
+
 {% block content %}
 <!-- 정렬 -->
 <div class="overflow arr-box">
@@ -41,15 +43,13 @@
     <div class="line"></div>
 </div>
 
-
-<!-- <h3 id="none-result" style="text-align: center; margin-top:100px;">결과가 없습니다.</h3> -->
-
 <!-- 포스팅 글 -->
 
 <!-- 장소 포스팅 -->
+
 {% if places %}
 
-{% for place in posts %}
+{% for place in places %}
 <div class="overflow fund-content">
 
     <div class="left-place">
@@ -93,6 +93,12 @@
     <a class="page-text" href="?page={{posts.paginator.num_pages}}">끝으로</a>
     {%endif%}
 </div>
+
+{% else %}
+<div>
+    <p class="">You have searched for : <b>"{{query}}"</b></p>
+</div>
+
 {% endif %}
 
 

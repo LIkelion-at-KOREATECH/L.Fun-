@@ -2,11 +2,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from main1 import views
+# from main1 import views
+from . import views
+
+app_name = 'search'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('apply/', include('place.urls')), # 펀딩/장소 신청
-    path('main/', include('main1.urls')),
-    path('search/', include('search.urls')),
+    path('nonmember/', views.searchResult1, name='searchResult1'),
+    path('', views.searchResult2, name='searchResult2')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -134,10 +134,13 @@
 
         <div class="overflow nav-div2">
 
-            <form class="nav-item search-box " action="" method="">
-                <input id="" type="text" name="search" maxlength="20" placeholder="찾고싶은 공연이 있다면?">
+            {% block search %}
+            <form class="nav-item search-box" action="{% url 'search:searchResult2' %}" method="get">
+                {% csrf_token %}
+                <input id="" type="search" name="q" maxlength="20" placeholder="찾고싶은 공연이 있다면?">
                 <button type="submit"><i class="fas fa-search fa-lg"></i></button>
             </form>
+            {% endblock %}
 
 
             <a class="nav-item apply" href="{% url 'place' %}">장소 등록 신청</a>

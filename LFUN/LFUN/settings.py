@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main1.apps.Main1Config', # 홈
     'place', # 장소신청
+    'search.apps.SearchConfig',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'LFUN.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['LFUN/templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'LFUN/templates'), os.path.join(BASE_DIR, 'search','templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
