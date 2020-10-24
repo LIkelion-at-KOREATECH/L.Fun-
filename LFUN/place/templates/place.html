@@ -7,40 +7,40 @@
 
 
 {% block content %}
-<h style="color: #898989; font: size 15px; font-weight:700; position:absolute; left:75%; margin-top: 5px;">*는 필수입력
+<h style="color: #898989; font: size 15px; font-weight:700; position:absolute; left:940px; margin-top: 10px;">*는 필수입력
     요소입니다.</h>
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="input-element">
+    <div class="overflow input-element">
         <div>
-            <label style="color:#f65656; font-weight:700; font-size:18px;">장소명*</label><br>
+            <label style="color:#000000; font-weight:700; font-size:18px;">장소명*</label><br>
             <input type="" name="place_name" placeholder="장소 이름을 입력해주세요" id="place_name" required>
         </div>
         <div>
-            <label style="color:#f65656; font-weight:700; font-size:18px;">장소소개*</label><br>
+            <label style="color:#000000; font-weight:700; font-size:18px;">장소소개*</label><br>
             <textarea id="place_introduce" name="place_introduce" cols="40" rows="10"
-                placeholder="장소를 소개해주세요. 상세할수록 예약률이 높습니다." required></textarea>
+                placeholder="&#13;&#10;장소를 소개해주세요. 상세할수록 예약률이 높습니다." required></textarea>
             <div>
-                <label style="color:#f65656; font-weight:700; font-size:18px;">장소 예약 시 주의사항</label><br>
-                <input type="text" name="place_caution" placeholder="주의 사항을 입력해주세요." id="place_caution">
+                <label style="color:#000000; font-weight:700; font-size:18px;">예약 시 주의사항</label><br>
+                <input type="text" name="place_caution" placeholder="주의사항을 입력해주세요." id="place_caution">
             </div>
             <div>
-                <label style="color:#f65656; font-weight:700; font-size:18px;">대표이미지*</label>
-                <input type="file" name="place_image" id="place_image" required>
+                <label style="color:#000000; font-weight:700; font-size:18px;">대표이미지*&nbsp;&nbsp;&nbsp;</label>
+                <input style="margin-bottom:20px;" type="file" name="place_image" id="place_image" required>
             </div>
             <div>
-                <label style="color:#f65656; font-weight:700; font-size:18px;">주소*</label><br>
-                <input type="text" name="place_address" placeholder="주소" id="place_address" required>
+                <label style="color:#000000; font-weight:700; font-size:18px;">주소*</label><br>
+                <input type="text" name="place_address" placeholder="소재지를 입력해주세요." id="place_address" required>
                 <input type="button" onclick="execDaumPostcode()" value="주소찾기" id="place_a">
                 <input type="text" name="place_detailAddress" id="place_detailAddress" placeholder="상세주소" required>
                 <input type="text" name="place_postcode" id="place_postcode" placeholder="우편번호">
                 <input type="text" name="place_extraAddress" id="place_extraAddress" placeholder="참고항목">
             </div>
             <div>
-                <label style="color:#f65656; font-weight:700; font-size:18px;">대여료*</label>
-                <h style="color:#f65656; font-size:15px; font-weight:700; position:absolute; left:60%;">※장소대여비는 24시간
+                <label style="color:#000000; font-weight:700; font-size:18px;">대여료*</label>
+                <h style="color:#000000; font-size:15px; font-weight:700; position:absolute; left:490px;">※장소대여비는 24시간
                     기준으로 작성해주세요.</h> <br>
-                <input type="text" name="place_price" placeholder="원하시는 장소 대여비를 입력해주세요. EX) 80000원" id="place_price"
+                <input type="text" id="place_price" name="place_price" placeholder="원하시는 장소 대여비를 입력해주세요. EX) 80000원"
                     required>
             </div>
             <button type="submit" id="submit-btn" style="color:white; font-size:20px;">등록하기</button>

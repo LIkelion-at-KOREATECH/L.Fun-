@@ -1,18 +1,25 @@
+.overflow{
+  overflow: hidden;
+  display:inline-block;
+}
 .input-element {
   display: flex;
   flex-direction: column;
   position: absolute;
-  left: 50%;
-  margin-top: 50px;
-  transform: translateX(-50%);
+  margin-left: 300px;
+  margin-top: 60px;
+  /* left: 50%; */
+  /* margin-top: 50px; */
+  /* transform: translateX(-50%); */
+  width:1000px;
 }
 
 #place_name {
   width: 800px;
-  height: 50px;
+  height: 35px;
   border: solid 1px #707070;
   background-color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 #place_introduce {
@@ -20,7 +27,8 @@
   height: 50px;
   border: solid 1px #707070;
   background-color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
+  font-family:sans-serif;
 }
 
 #place_caution {
@@ -28,20 +36,20 @@
   height: 50px;
   border: solid 1px #707070;
   background-color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 #place_address {
   width: 650px;
-  height: 50px;
+  height: 40px;
   border: solid 1px #707070;
   background-color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom:5px;
 }
 
 #place_postcode {
-  width: 220px;
-  height: 50px;
+  width: 256px;
+  height: 30px;
   border: solid 1px #707070;
   background-color: #ffffff;
   margin-bottom: 10px;
@@ -49,8 +57,8 @@
 }
 
 #place_detailAddress {
-  width: 220px;
-  height: 50px;
+  width: 256px;
+  height: 30px;
   border: solid 1px #707070;
   background-color: #ffffff;
   margin-bottom: 10px;
@@ -58,37 +66,43 @@
 }
 
 #place_extraAddress {
-  width: 220px;
-  height: 50px;
+  width: 256px;
+  height: 30px;
   border: solid 1px #707070;
   background-color: #ffffff;
-  margin-bottom: 10px;
-  margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 #place_a {
-  width: 100px;
-  height: 50px;
+  width: 145px;
+  height: 43px;
   background-color: #f65656;
   color: #ffffff;
+  font-weight: 800;
+  cursor: pointer;
   border: solid 1px #707070;
+  border-radius: 3px;
 }
 
 #place_price {
   width: 800px;
-  height: 50px;
+  height: 30px;
   border: solid 1px #707070;
   background-color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 #submit-btn {
-  width: 450px;
+  width: 250px;
   height: 70px;
   border: solid 1px #707070;
   background-color: #f65656;
-  margin-top: 5px;
-  transform: translateX(40%);
+  border-radius: 20px;
+  font-weight: 900;
+  /* transform: translateX(50%); */
+  margin-left:277px;
+  margin-bottom: 100px;
+  cursor: pointer;
 }
 
 /* placefi.html------------------------------------------------ */
@@ -115,3 +129,4 @@
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
+

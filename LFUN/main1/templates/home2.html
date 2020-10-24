@@ -36,9 +36,9 @@
 <!-- 포스팅 글 -->
 {% if places %}
 {% for place in posts %}
-<div class="fund-content">
+<div class="overflow fund-content">
 
-    <div class="left-place">
+    <div class=" left-place">
         <a class="left-link" href="{% url 'posting2' place.id %}">
             <img class="left-poster-place" src="{{ place.place_image.url }}" alt="{{ place.place_name }}">
             <p class="left-title">{{ place.place_name }}</p>

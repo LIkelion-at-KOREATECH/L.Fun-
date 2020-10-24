@@ -17,14 +17,14 @@
 
 {% block content %}
 <!-- 포스팅 글(간단히) -->
-<div class="fund-content1">
+<div class="overflow fund-content1">
 
-    <div class="left">
+    <div class="overflow left">
         <img class="left-poster-place" src="{{ places.place_image.url }}">
     </div>
 
 
-    <div class="right">
+    <div class="overflow right">
         <div class="right-box1">
             <p class="right-title-place">{{ places.place_name }}</p>
             <p class="right-pro2">주소</p>
@@ -42,7 +42,7 @@
 
 
 <!-- 포스팅 글(자세히)-->
-<div class="fund-content2">
+<div class="overflow fund-content2">
     <h2>1. 소개</h2>
     <p class="c-list">{{ places.place_introduce }}</p>
     <h2>2. 주의사항</h2>
@@ -51,7 +51,7 @@
     <p class="c-list">24시간 당 {{ places.place_price }}</p>
 </div>
 
-<div class="fund-content3">
+<div class="overflow fund-content3">
     <h4 class="c3-notice">사용 신청시 주의사항</h4>
     <p class="c3-list"><i class="fas fa-circle"></i>단순변심에 의한 환불은 게시자와 직접 교류하고, L.Fun!은 관여하지 않습니다.</p>
     <p class="c3-list"><i class="fas fa-circle"></i>사용 기간 이후 환불은 불가합니다.</p>
