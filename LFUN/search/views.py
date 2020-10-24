@@ -2,6 +2,7 @@ from django.shortcuts import render
 from place.models import Place
 from django.db.models import Q # 검색기능에 사용
 from django.core.paginator import Paginator # 페이지에 출력하는 게시글 수 조절에 사용
+                                            # 참고사이트 : https://citylock77.tistory.com/44?category=864190
 
 # Create your views here.
 

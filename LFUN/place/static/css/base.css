@@ -28,7 +28,7 @@ a {
     vertical-align: middle;
     width: 300px;
     white-space: nowrap;
-    padding-left:2rem;
+    padding-left: 2rem;
 }
 
 .nav-div2 {
@@ -37,10 +37,10 @@ a {
     padding-right: 4rem;
     padding-bottom: auto;
     padding-top: auto;
-    height:55.78px;
+    height: 55.78px;
     vertical-align: bottom;
     width: 1000px;
-    white-space: nowrap; 
+    white-space: nowrap;
     /* overflow: hidden; */
 }
 
@@ -115,7 +115,9 @@ button {
     margin-right: 4rem;
 }
 
-.info{margin-right: 20px;}
+.info {
+    margin-right: 20px;
+}
 
 /* navbar - menu */
 .fa-align-justify {

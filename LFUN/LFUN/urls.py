@@ -9,4 +9,5 @@ urlpatterns = [
     path('apply/', include('place.urls')), # 펀딩/장소 신청
     path('main/', include('main1.urls')),
     path('search/', include('search.urls')),
+    path('pub/', include('pub_result.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
