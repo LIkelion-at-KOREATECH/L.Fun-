@@ -41,9 +41,6 @@
     <div class="line"></div>
 </div>
 
-
-<!-- <h3 id="none-result" style="text-align: center; margin-top:100px;">결과가 없습니다.</h3> -->
-
 <!-- 포스팅 글 -->
 
 <!-- 장소 포스팅 -->
@@ -75,10 +72,12 @@
 </div>
 {% endfor %}
 
+{% else %}
+
 <!-- 페이지 넘기는 기능 -->
 <div class="page-box">
     <span class="page-num">{{posts.number}}</span> <!-- 페이지 번호 -->
-    <span class="page-num">of</span>
+    <span class="page-num">/</span>
     <span class="page-num">{{posts.paginator.num_pages}}</span> <!-- posts의 전체 페이지 갯수 -->
 </div>
 <div class="page-box">
@@ -93,7 +92,9 @@
     <a class="page-text" href="?page={{posts.paginator.num_pages}}">끝으로</a>
     {%endif%}
 </div>
+
 {% endif %}
+
 
 
 

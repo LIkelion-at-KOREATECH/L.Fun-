@@ -60,10 +60,12 @@
 </div>
 {% endfor %}
 
+{% else %}
+
 <!-- 페이지 넘기는 기능 -->
 <div class="page-box">
     <span class="page-num">{{posts.number}}</span> <!-- 페이지 번호 -->
-    <span class="page-num">of</span>
+    <span class="page-num">/</span>
     <span class="page-num">{{posts.paginator.num_pages}}</span> <!-- posts의 전체 페이지 갯수 -->
 </div>
 <div class="page-box">
@@ -80,6 +82,8 @@
 </div>
 
 {% endif %}
+
+
 
 
 

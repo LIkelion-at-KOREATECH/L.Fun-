@@ -14,6 +14,14 @@
 {% block link %} {% static 'css/posting2.css' %} {% endblock %}
 {% block content-home1 %}<a class="nav-item info" href="">로그인</a><a class="nav-item info" href="">회원가입</a>{% endblock %}
 {% block logo %}<a class="nav-title" href="{% url 'home1' %}">L.FUN!</a>{% endblock %}
+{% block search %}
+<form class="nav-item search-box" action="{% url 'search:searchResult1' %}" method="get">
+    {% csrf_token %}
+    <input id="" type="search" name="q" maxlength="20" placeholder="찾고싶은 공연이 있다면?">
+    <button type="submit"><i class="fas fa-search fa-lg"></i></button>
+</form>
+{% endblock %}
+
 
 {% block content %}
 <!-- 포스팅 글(간단히) -->
