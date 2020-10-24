@@ -1,5 +1,5 @@
 <!-- 비회원용 펀딩글 페이지 -->
- 
+
 <!-- 사용한 색상 : #7A7878(진한 회색) #E60012(빨강) #9e9a9a(회색) black-->
 <!-- 사용한 폰트 : Kanit(로고) / Gothic A1(내용) -->
 <!--  
@@ -9,59 +9,61 @@
     registered_dttm  -->
 {% extends 'base.html' %}
 {% load static %}
- 
+
 {% block title %} 자세히 보기 {% endblock %}
 {% block link %} {% static 'css/posting2.css' %} {% endblock %}
 {% block content-home1 %}<a class="nav-item info" href="">로그인</a><a class="nav-item info" href="">회원가입</a>{% endblock %}
 {% block logo %}<a class="nav-title" href="{% url 'home1' %}">L.FUN!</a>{% endblock %}
 
-    {% block content %}
-    <!-- 포스팅 글(간단히) -->
-    <div class="fund-content1">
+{% block content %}
+<!-- 포스팅 글(간단히) -->
+<div class="fund-content1">
 
-        <div class="left">
-            <img class="left-poster-place" src="{{ places.place_image.url }}">
+    <div class="left">
+        <img class="left-poster-place" src="{{ places.place_image.url }}">
+    </div>
+
+
+    <div class="right">
+        <div class="right-box1">
+            <p class="right-title-place">{{ places.place_name }}</p>
+            <p class="right-pro2">주소</p>
+            <p class="right-pro6">{{ places.place_address }}</p>
+            <p class="right-pro6">
+                {{ places.place_detailAddress }}{% if places.place_postcode %}({{ places.place_postcode }}){% endif %}
+            </p>
+            <p class="right-pro6">{{ places.place_extraAddress }}</p>
         </div>
 
-        
-        <div class="right">
-            <div class="right-box1">
-                <p class="right-title-place">{{ places.place_name }}</p>
-                <p class="right-pro2">주소</p>
-                <p class="right-pro6">{{ places.place_address }}</p>
-                <p class="right-pro6">{{ places.place_detailAddress }}{% if places.place_postcode %}({{ places.place_postcode }}){% endif %}</p>
-                <p class="right-pro6">{{ places.place_extraAddress }}</p>
-            </div>
-
-            <button class="funding" name="funding">사용신청</button>
-            <button class="share" name="share"><i class="fas fa-share"></i>&nbsp;&nbsp;공유</button>
-        </div>
+        <button class="funding" name="funding">사용신청</button>
+        <button class="share" name="share"><i class="fas fa-share"></i>&nbsp;&nbsp;공유</button>
     </div>
+</div>
 
 
-    <!-- 포스팅 글(자세히)-->
-    <div class="fund-content2">
-        <h2>1. 소개</h2>
-        <p class="c-list">{{ places.place_introduce }}</p>
-        <h2>2. 주의사항</h2>
-        <p class="c-list">{{ places.place_caution }}</p>
-        <h2>3. 대여비</h2>
-        <p class="c-list">24시간 당 {{ places.place_price }}</p>
-    </div>
+<!-- 포스팅 글(자세히)-->
+<div class="fund-content2">
+    <h2>1. 소개</h2>
+    <p class="c-list">{{ places.place_introduce }}</p>
+    <h2>2. 주의사항</h2>
+    <p class="c-list">{{ places.place_caution }}</p>
+    <h2>3. 대여비</h2>
+    <p class="c-list">24시간 당 {{ places.place_price }}</p>
+</div>
 
-    <div class="fund-content3">
-        <h4 class="c3-notice">사용 신청시 주의사항</h4>
-        <p class="c3-list"><i class="fas fa-circle"></i>단순변심에 의한 환불은 게시자와 직접 교류하고, L.Fun!은 관여하지 않습니다.</p>
-        <p class="c3-list"><i class="fas fa-circle"></i>사용 기간 이후 환불은 불가합니다.</p>
-        <p class="c3-list"><i class="fas fa-circle"></i>환불/변경/확정 내역은 '메뉴>참여한 펀딩'에서 확인할 수 있습니다.</p>
-    </div>
+<div class="fund-content3">
+    <h4 class="c3-notice">사용 신청시 주의사항</h4>
+    <p class="c3-list"><i class="fas fa-circle"></i>단순변심에 의한 환불은 게시자와 직접 교류하고, L.Fun!은 관여하지 않습니다.</p>
+    <p class="c3-list"><i class="fas fa-circle"></i>사용 기간 이후 환불은 불가합니다.</p>
+    <p class="c3-list"><i class="fas fa-circle"></i>환불/변경/확정 내역은 '메뉴>참여한 펀딩'에서 확인할 수 있습니다.</p>
+</div>
 
-    <!-- {% for place in my_placec.all %} -->
-    <!-- {% endfor %} -->
+<!-- {% for place in my_placec.all %} -->
+<!-- {% endfor %} -->
 
 
-    <!-- 포스팅 글(간단히) -->
-    <!-- <div class="fund-content1">
+<!-- 포스팅 글(간단히) -->
+<!-- <div class="fund-content1">
 
         <div class="left">
             <img class="left-poster" src="{% static 'image/poster.png' %}">
@@ -93,8 +95,8 @@
     </div> -->
 
 
-    <!-- 포스팅 글(자세히)-->
-    <!-- <div class="fund-content2">
+<!-- 포스팅 글(자세히)-->
+<!-- <div class="fund-content2">
         <h2>1. 출연진/연출진</h2>
         <p class="c-list">대장(황미림), 킹갓(김원석), 에이스(박홍준), 빛(김의현), 돕바(김도호), 카메라(멋쟁이 사자처럼 위원), 편집(솰뢀라)</p>
         <h2>2. 줄거리</h2>
@@ -113,5 +115,5 @@
         <p class="c3-list"><i class="fas fa-circle"></i>모금액의 0.001% 이상 펀딩할 시, 펀딩액 3% 할인 쿠폰이 발급됩니다.</p>
         <p class="c3-list"><i class="fas fa-circle"></i>3개의 펀딩에 참여할 때마다, 펀딩액 1% 할인 쿠폰이 발급됩니다.</p>
     </div> -->
-    {% endblock %}
+{% endblock %}
 </body>

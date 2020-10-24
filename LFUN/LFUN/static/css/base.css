@@ -20,7 +20,6 @@ a {
 .nav-container {
     display: table;
     border-bottom: 1px solid #7A7878;
-
     table-layout: fixed;
 }
 
@@ -115,8 +114,10 @@ button {
 }
 
 .apply2 {
-    margin-right: 5rem;
+    margin-right: 4rem;
 }
+
+.info{margin-right: 20px;}
 
 /* navbar - menu */
 .fa-align-justify {
@@ -131,7 +132,7 @@ button {
 }
 
 .menu .menu-list {
-    padding: 10px;
+    /* padding: 10px;
     display: none;
     line-height: 1.8;
     list-style: none;
@@ -139,6 +140,17 @@ button {
     border: 3px solid #9e9a9a;
     border-radius: 1rem;
     height: 3rem;
+    padding: 10px;
+    text-align: center;
+    color: black; */
+    padding: 10px;
+    display: none;
+    line-height: 1.8;
+    list-style: none;
+    background-color: white;
+    border: 3px solid #9e9a9a;
+    border-radius: 1rem;
+    height: 7rem;
     padding: 10px;
     text-align: center;
     color: black;
