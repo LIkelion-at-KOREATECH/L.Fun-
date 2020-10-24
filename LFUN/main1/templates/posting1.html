@@ -12,6 +12,11 @@
 
 {% block title %} 자세히 보기 {% endblock %}
 {% block link %} {% static 'css/posting2.css' %} {% endblock %}
+{% block style %} <style>
+    .menu .menu-list {
+        height: 5.2rem;
+    }
+</style>{% endblock %}
 {% block content-home1 %}<a class="nav-item info" href="">로그인</a><a class="nav-item info" href="">회원가입</a>{% endblock %}
 {% block logo %}<a class="nav-title" href="{% url 'home1' %}">L.FUN!</a>{% endblock %}
 {% block search %}
@@ -20,6 +25,12 @@
     <input id="" type="search" name="q" maxlength="20" placeholder="찾고싶은 공연이 있다면?">
     <button type="submit"><i class="fas fa-search fa-lg"></i></button>
 </form>
+{% endblock %}
+{% block apply %}
+<span class="nav-item" style="color:white; margin-right: 300px;">i</span>
+{% endblock %}
+
+{% block menu %}
 {% endblock %}
 
 
