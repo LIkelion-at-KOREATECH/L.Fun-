@@ -3,7 +3,7 @@
 <!-- 사용한 폰트 : Kanit(로고) / Gothic A1(내용) -->
 <!DOCTYPE html>
 <html lang="en">
- 
+  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -102,6 +102,33 @@
             });
         });
     </script>
+    
+     <style>
+        .nav-container {
+        display: table;
+        border-bottom: 1px solid #7A7878;
+        table-layout: fixed;
+        }
+
+        .nav-div1 {
+            display: table-cell;
+            vertical-align: middle;
+            width:300px;
+            white-space: nowrap;
+        }
+
+        .nav-div2 {
+            display: table-cell;
+            /* text-align: right; */
+            padding-right: 4rem;
+            padding-bottom: auto;
+            padding-top: auto;
+            vertical-align: middle;
+            width: 1000px;
+            white-space: nowrap;
+            /* overflow: hidden; */
+            }
+    </style>
 </head>
 
 <body>
@@ -109,13 +136,13 @@
     <!-- navbar -->
     <nav class="nav-container">
 
-        <div class="nav-div1">
+        <div class="overflow nav-div1">
             {% block logo %}
             <a class="nav-title" href="{% url 'home2' %}">L.FUN!</a>
             {% endblock %}
         </div>
 
-        <div class="nav-div2">
+        <div class="overflow nav-div2">
           
             <form class="nav-item search-box " action="" method="">
                 <input id="" type="text" name="search" maxlength="20" placeholder="찾고싶은 공연이 있다면?">
