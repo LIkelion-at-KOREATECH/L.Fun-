@@ -42,7 +42,7 @@
     <!-- 장소 포스팅 -->
     {% if places %}
     
-    {% for place in places.all %}
+    {% for place in posts %}
     <div class="fund-content">
 
         <div class="left-place">
@@ -67,8 +67,23 @@
 
     </div>
     {% endfor %}
-    
-    
+
+    <!-- 페이지 넘기는 기능 -->
+    <div class="page-box">
+        <span class="page-num">{{posts.number}}</span> <!-- 페이지 번호 -->
+        <span class="page-num">of</span>
+        <span class="page-num">{{posts.paginator.num_pages}}</span> <!-- posts의 전체 페이지 갯수 -->
+    </div>
+    <div class="page-box">
+    {% if posts.has_previous %} <!-- posts: 현재 보여지고 있는 페이지 / 1이라면 if문 출력안함 -->
+        <a class="page-text" href="?page=1">처음으로</a> <!-- 첫페이지로 돌아가기 -->
+        <a class="page-text" href="?page={{posts.previous_page_number}}">이전</a> <!-- posts의 바로 이전 페이지 -->
+    {% endif %}
+    {% if posts.has_next %} <!-- 다음 페이지 존재하는지 확인 / 마지막 페이지면 출력 안함 -->
+        <a class="page-text" href="?page={{posts.next_page_number}}">다음</a>
+        <a class="page-text" href="?page={{posts.paginator.num_pages}}">끝으로</a>
+    {%endif%}
+    </div>
     {% endif %}
     
 
