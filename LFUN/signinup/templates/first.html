@@ -1,0 +1,48 @@
+<!-- 첫 화면 -->
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- 메인 상위 로고 이미지   -->
+        <link rel="stylesheet" href="{% static 'css/first.css' %}">
+        <style>
+            .google {
+                width: 320px;
+                height: 70px;
+                border: 1px solid #f65656;
+                border-radius: 10px;
+            }
+            .signin:hover {
+                color: #f65656;
+                background-color: white;
+                border: 3px solid  #f65656;
+                border-radius: 10px;
+            }
+        </style>
+        <img class="logo" src="{% static 'image/logo_likelion.png'%}">{{logo}}</img>
+    </head>
+    <body>
+            <!--둘러보기 버튼-->
+            <span class="look_btn">
+                <a class="look" href="{% url 'signin' %}">둘러보기</a>
+            </span>
+            <!--로그인, 회원가입 버튼-->
+            <span class="right_btn">
+                <a href="{% url 'signin' %}" class="signin">로그인</a>
+                <br>
+                <a href="{% url 'signup' %}" class="signup">회원가입</a>
+                <br>
+                <img class="line" src="{% static 'image/line.png'%}">{{line}}</img>
+                <br>
+                <a href = " {% provider_login_url 'google' %}"><img src="{% static 'image/google_login.png'%}" class="google"></a>
+                <br>
+                <a href = " {% provider_login_url 'kakao' %}">카카오</a>
+            </span>
+        </body>
+    <footer>
+
+    </footer>
+</html>

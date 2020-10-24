@@ -1,0 +1,71 @@
+.logo {
+    width: 700px;
+    height: 150px;
+    margin: 0 auto;
+    margin-left: 450px;
+    margin-top: 70px;
+}
+
+.look {
+    float: left;
+    margin-top: 35px;
+    margin-left: 280px;
+    border: solid 3px #f65656;
+    border-radius: 50%;
+    font-size: 30px;
+    text-decoration: none;
+    color:#f65656;
+    padding: 150px 120px;
+}
+
+.look:hover{
+    font-weight: bold;
+}
+
+.right_btn {
+    float: right;
+    margin-right: 250px;
+    margin-top: 50px;
+}
+
+.signin {
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    background-color: #f65656;
+    padding: 10px 115px;
+    display: inline-block;
+    border-radius: 10px;
+    transition: all 0.1s;
+}
+
+.signup {
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 30px;
+    color: white;
+    background-color: #f65656;
+    padding: 10px 100px;
+    display: inline-block;
+    border-radius: 10px;
+    transition: all 0.1s;
+}
+.signin:hover {
+    color: #f65656;
+    background-color: white;
+    border: 3px solid  #f65656;
+    border-radius: 10px;
+}
+
+.signup:hover{
+    color: #f65656;
+    background-color: white;
+    border: 3px solid  #f65656;
+    border-radius: 10px;
+}
+
+.line {
+    width: 325px;
+    height: 35px;
+    margin-top: 20px;
+}
