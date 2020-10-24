@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <!-- 구글폰트 적용-->
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&family=Kanit:wght@600&display=swap" rel="stylesheet">
+    
+        {% block style %} {% endblock %}
+
     <!-- 홍준쓰가 추가한거 -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -113,12 +116,16 @@
         </div>
 
         <div class="nav-div2">
-            <form class="nav-item search-box" action="" method="">
+          
+            <form class="nav-item search-box " action="" method="">
                 <input id="" type="text" name="search" maxlength="20" placeholder="찾고싶은 공연이 있다면?">
                 <button type="submit"><i class="fas fa-search fa-lg"></i></button>
             </form>
+            
+          
             <a class="nav-item apply" href="{% url 'place' %}">장소 등록 신청</a>
             <a class="nav-item apply apply2" href="">펀딩 오픈 신청</a>
+            
             {% block content-home1 %}
             <a class="nav-item info" href="">내 정보</a>
             <a class="nav-item info" href="">로그아웃</a>
@@ -139,10 +146,7 @@
     </span>
     
     <main>
-    {% block content-home2 %}
-    {% endblock %}
-
-    {% block content-place %}
+    {% block content %}
     {% endblock %}
     </main>
     

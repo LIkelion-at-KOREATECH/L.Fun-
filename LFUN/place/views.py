@@ -22,5 +22,7 @@ def place(request):
         place = Place(place_image=place_image, place_address=place_address, place_postcode=place_postcode, place_detailAddress=place_detailAddress, place_extraAddress=place_extraAddress, place_price=place_price, place_name= place_name, place_caution=place_caution,  place_introduce= place_introduce)
         place.save()
 
-        return render(request, 'place.html')
-        
+        return render(request, 'placefi.html')
+
+def placefi(request):
+    return render(request, 'placefi.html')        
