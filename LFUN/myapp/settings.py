@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'pub_result.apps.PubResultConfig',
     'mirim.apps.MirimConfig',
     'pay',
-    'google_login.apps.GoogleLoginConfig',
 
 
     # 소셜로그인
