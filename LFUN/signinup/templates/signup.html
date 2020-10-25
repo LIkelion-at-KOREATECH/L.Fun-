@@ -183,7 +183,7 @@
                 <button type="submit"><i class="fas fa-search fa-lg"></i></button>
             </form>
             <a class="nav-item info" href="{% url 'signin' %}">로그인</a>
-            <a class="nav-item info" href="">고객센터</a>
+            <a class="nav-item info" href="{% url 'center' %}">고객센터</a>
             {% block content-home1 %}
             <a class="nav-item info" href="">내 정보</a>
             <a class="nav-item info" href="">로그아웃</a>
@@ -196,10 +196,7 @@
     <span id="menu" class="menu">
         <i class="fas fa-align-justify" style="cursor:pointer"></i>
         <ul class="menu-list">
-            <li><a class="menu-content" href="">참여한 펀딩</a></li>
-            <li><a class="menu-content" href="">장소 대여 신청</a></li>
-            <li><a class="menu-content" href="">소개</a></li>
-            <li><a class="menu-content" href="">이용약관</a></li>
+            <li><a class="menu-content" href="{% url 'use' %}">이용약관</a></li>
         </ul>
     </span>
 </head>
