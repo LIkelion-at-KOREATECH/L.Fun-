@@ -1,0 +1,153 @@
+
+.pay_box{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5rem;
+   
+}
+
+.funding_img{
+    width: 15rem;
+    height: 23rem;
+    margin-right: 7rem;
+
+}
+
+.fund_img{
+    width: 16rem;
+    height: 24rem;
+}
+
+.pay_items{
+    flex-direction: column;
+}
+
+.button{
+    width: 20px;
+}
+
+.fund_p{
+    color: white;
+    size: 15px;
+}
+
+.fund_p_box{
+    display: flex;
+    text-align: center;
+    width: 15rem;
+    height: 2.5rem;
+    background-color: tomato;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/*notice*/
+.fund-content3 {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 5% auto 0 auto;
+}
+
+.c3-notice {
+    margin: 2% 0 1% 0;
+}
+
+.c3-list {
+    padding-left: 2%;
+    margin-bottom: 2px;
+    color: #9e9a9a;
+    font-size: 0.9rem;
+}
+
+.fa-circle {
+    margin-right: 3px;
+    color: #9e9a9a;
+}
+
+.detail_box{
+    width: 15.5rem;
+ 
+    border: 1px solid gray;
+    border-radius: 15px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail_box_td1{
+    border-collapse: collapse;
+    border-bottom: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+.detail_box_td2{
+    border-collapse: collapse;
+    border-bottom: 1px solid gray;
+    
+}
+
+.detail_box_td3{
+    border-collapse: collapse;
+    border-right: 1px solid gray;
+}
+
+.detail_font1{
+    font-size: 15px;
+    padding-left: 4px;
+}
+
+.detail_font2{
+    font-size: 15px;
+    color: gray;
+    padding-left: 4px;
+}
+
+.fund_input{
+    width: 9rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid gray;
+}
+
+.fund_coupon{
+    width: 4rem;
+    border: 1px solid;
+    margin-left: 0.5rem;
+}
+
+.fund_button_box{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.fund_button{
+    margin-top: 1rem;
+    width: 7rem;
+    border: 1px solid;
+}
+
+.final_button_box{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.fund_final_button{
+    width: 15rem;
+    height: 4rem;
+    border: 1px solid tomato;
+    margin: auto;
+    color: tomato;
+    font-size: 1.5rem;
+
+}
+
+.boundary{
+    border-bottom: 1px solid #7A7887;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7rem;
+}

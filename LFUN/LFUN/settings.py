@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'search.apps.SearchConfig',
     'pub_result.apps.PubResultConfig',
     'mirim.apps.MirimConfig',
+    'pay',
 ]
 
 MIDDLEWARE = [

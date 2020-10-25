@@ -3,6 +3,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from main1 import views
+from pay import views
 import mirim.views
 
 urlpatterns = [
@@ -11,6 +12,7 @@ urlpatterns = [
     path('main/', include('main1.urls')),
     path('search/', include('search.urls')),
     path('pub/', include('pub_result.urls')),
+    path('pay/', include('pay.urls')),
 
     # 미림
     path('',mirim.views.home, name="home"),
