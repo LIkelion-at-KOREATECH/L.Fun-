@@ -26,7 +26,7 @@ SECRET_KEY = 'za+d_-ip1@=w2qxy@mdijxe_onbm)+47p)jx!4p(n*t^r=byj9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'localhost',]
+ALLOWED_HOSTS = ['*', 'localhost','http://l-fun.kro.kr/',]
 
 
 # Application definition
