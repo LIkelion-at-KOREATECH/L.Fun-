@@ -43,12 +43,6 @@
                 <a href="{% url 'signin' %}" class="signin">로그인</a>
                 <br>
                 <a href="{% url 'signup' %}" class="signup">회원가입</a>
-                <br>
-                <img class="line" src="{% static 'image/line.PNG'%}">{{line}}</img>
-                <br>
-                <a href = " {% provider_login_url 'google' %}"><img src="{% static 'image/google_login1.png'%}" class="google"></a>
-                <br>
-                <a href = " {% provider_login_url 'naver' %}"><img src="{% static 'image/naver_login.PNG'%}" class="naver"></a>
             </span>
         </body>
     <footer>
