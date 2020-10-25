@@ -26,5 +26,6 @@ urlpatterns = [
     path('account/', include('allauth.urls')),
     path('apply/', include('place.urls')), # 펀딩/장소 신청
     path('main/', include('main1.urls')),
+    path('pay/', include('pay.urls')),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

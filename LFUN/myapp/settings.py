@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'signinup',
     'main1.apps.Main1Config', # 홈
     'place', # 장소신청
+    'pay', #결제
 
 
     # 소셜로그인
@@ -137,6 +138,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS= [
         os.path.join(BASE_DIR, 'place', 'static'),# static파일 들어있는 경로
+        
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')    # static파일 모을 위치
 
