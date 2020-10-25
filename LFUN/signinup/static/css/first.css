@@ -2,30 +2,45 @@
     width: 700px;
     height: 150px;
     margin: 0 auto;
-    margin-left: 450px;
+    margin-left: 330px;
     margin-top: 70px;
+}
+
+.look_btn {
+    width: 370px;
+    height: 350px;
+    overflow: hidden;
 }
 
 .look {
     float: left;
     margin-top: 35px;
-    margin-left: 280px;
+    margin-left: 260px;
     border: solid 3px #f65656;
     border-radius: 50%;
     font-size: 30px;
     text-decoration: none;
-    color:#f65656;
-    padding: 150px 120px;
+    color: #f65656;
+    line-height: 12;
+    width: 370px;
+    height: 350px;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: center;
 }
 
-.look:hover{
+.look:hover {
     font-weight: bold;
 }
 
 .right_btn {
-    float: right;
-    margin-right: 250px;
-    margin-top: 50px;
+    margin-left: 800px;
+    /* margin-top: 50px; */
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+    display: inline-block;
+    margin-top: -500px;
 }
 
 .signin {
@@ -50,17 +65,18 @@
     border-radius: 10px;
     transition: all 0.1s;
 }
+
 .signin:hover {
     color: #f65656;
     background-color: white;
-    border: 3px solid  #f65656;
+    border: 3px solid #f65656;
     border-radius: 10px;
 }
 
-.signup:hover{
+.signup:hover {
     color: #f65656;
     background-color: white;
-    border: 3px solid  #f65656;
+    border: 3px solid #f65656;
     border-radius: 10px;
 }
 
