@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, logout
 from .models import User
 from django.contrib import auth
 from django.contrib.auth import login
@@ -43,3 +43,8 @@ def signup(request):
            return redirect('/')
 
     return render(request, 'signup.html')
+
+def logout(request):
+    if request.method == "POST" :
+        auth.logout(request)
+        return redirect('/', {'caution':'로그아웃 되었습니다'})

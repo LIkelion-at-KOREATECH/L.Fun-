@@ -28,7 +28,7 @@ class Funding(models.Model):
     funded_price = models.IntegerField(null=True, default=0)
     
     # 안올림
-    funding_startday = models.CharField(max_length = 4)
+    funding_startday = models.CharField(max_length = 16)
     funding_starttime = models.CharField(max_length = 4)
 
     funding_endday = models.CharField(max_length = 4)

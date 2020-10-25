@@ -149,7 +149,9 @@
 
             {% block content-home1 %}
             <a class="nav-item" href="{% url 'pub'%}">내 정보</a>
-            <a class="nav-item info" href="">로그아웃</a>
+            <a class="nav-item info" href="javascript:{document.getElementById('logout').submit()}">로그아웃</a>
+            <form action="{% url 'logout' %}" method="POST" id="logout">
+            {% csrf_token %} <input type="hidden"></form>
             {% endblock %}
         </div>
 
