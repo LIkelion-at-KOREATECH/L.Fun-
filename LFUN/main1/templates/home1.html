@@ -28,7 +28,9 @@
 
 
 {% block apply %}
-<span class="nav-item" style="color:white; margin-right: 300px;">i</span>
+<!-- <span class="nav-item" style="color:white; margin-right: 300px;">i</span> -->
+<a class="nav-item apply" href="{% url 'first' %}" onclick="alert('로그인이 필요한 서비스입니다.');">장소 등록 신청</a>
+<a class="nav-item apply apply2" href="{% url 'first' %}" onclick="alert('로그인이 필요한 서비스입니다.');">펀딩 오픈 신청</a>
 {% endblock %}
 
 {% block content %}
@@ -65,22 +67,41 @@
 
     <div class="left-place">
         <a class="left-link" href="{% url 'posting1' place.id %}">
-            <img class="left-poster-place" src="{{ place.place_image.url }}" alt="{{ place.place_name }}">
-            <p class="left-title">{{ place.place_name }}</p>
+            <img class="left-poster-place" src="{{ place.project_image.url }}" alt="{{ place.place_name }}">
+
         </a>
     </div>
-    <div class="right-place">
+
+    <div class="center">
+
+            <span class="center-type">장르  |  {{ place.project_category }}</span>
+
+            <p class="center-genre">{{ place.project_name }}</p>
+
+
+        <div class="center-box1">
+            <span class="center-pro1">펀딩 진행상황</span>
+            <span class="center-pro2">종료 {{ place.funding_endday }}</span>
+            <p class="center-pro3">성공까지 6% 남음</p>
+        </div>
+
+        <div class="center-box2">
+            <span class="center-pro3">모금액</span>
+            <span class="center-pro4">{{ place.funded_price }}원</span>
+        </div>
+
+        <div class="center-box3">
+            <span class="center-pro3">목표액</span>
+            <span class="center-pro5">{{ place.funding_price }}원</span>
+        </div>
+    </div>
+
+
+    <div class="right-place" style="margin-left: 20px;">
         <p class="right-title">소개</p>
         <!-- linebreaksbr는 줄바꿈 인식하는 필터 -->
         <p class="right-content"> {{ place.summary|linebreaksbr }}</p>
         <a class="right-content right-link" href="{% url 'posting1' place.id %}">...자세히</a>
-        <p class="right-title">주소</p>
-        <p class="right-content2">
-            {{ place.place_address }}<br>{{ place.place_detailAddress }}
-            {% if place.place_extraAddress %}({{ place.place_extraAddress }}){% endif %}
-        </p>
-        <p class="right-title">비용</p>
-        <p class="right-content2"> 1일 {{ place.place_price }} </p>
     </div>
 
 </div>

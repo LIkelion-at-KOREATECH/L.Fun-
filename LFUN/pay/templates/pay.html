@@ -1,0 +1,89 @@
+<!-- 비회원용 메인페이지 -->
+
+<!-- 사용한 색상 : #7A7878(진한 회색) #E60012(빨강) #9e9a9a(회색) black-->
+<!-- 사용한 폰트 : Kanit(로고) / Gothic A1(내용) -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %} L.FUN! 홈 {% endblock %}
+{% block extrahead %}
+  <link rel="stylesheet" href="{% static 'css/pay.css' %}">
+  {% endblock %}
+{% block link %} {% static 'css/pay.css' %} {% endblock %}
+{% block logo %}<a class="nav-title" href="{% url 'home1' %}">L.FUN!</a>{% endblock %}
+{% block content-home1 %}<a class="nav-item info" href="">로그인</a><a class="nav-item info" href="">회원가입</a>{% endblock %}
+
+    {% block content %}
+   
+{% if funding %}
+
+<form action="{% url 'pay_complete' funding.id%}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="pay_box">
+        <div class="funding_img">
+            <img class="fund_img" src="{{ funding.project_image.url }}" >
+        </div>
+
+        <div class="pay_items">
+            <div>
+                <div class="fund_p_box">
+                    <p class="fund_p">펀딩 내용</p>
+                </div>
+                <table class="detail_box">
+                    <tr ><td class="detail_box_td1 detail_font1">제목</td><td class="detail_box_td2 detail_font2">{{funding.project_name}}</td></tr>
+                    <tr><td class="detail_box_td1 detail_font1">장르</td><td class="detail_box_td2 detail_font2">{{funding.project_categor}}</td></tr>
+                    <tr><td class="detail_box_td1 detail_font1">러닝타임</td><td class="detail_box_td2 detail_font2">100분</td></tr>
+                    <tr><td class="detail_box_td3 detail_font1">마감날짜</td><td class="detail_font2">{{funding.funding_endday}}</td></tr>
+                </table>
+            </div>
+
+            <div>
+                <div class="fund_p_box">
+                    <p class="fund_p">펀딩 금액</p>
+                </div>
+                <div>
+                <input class="fund_input" type="text" name="price" placeholder="금액을 입력하세요."><span style="margin-left:0.3rem;">원</span>
+                <button class="fund_coupon" onclick="alert('서비스 준비중입니다.');">쿠폰확인</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="fund_p_box">
+                    <p class="fund_p">결제 방식</p>
+                </div>
+                <div class="fund_button_box">
+                    <button class="fund_button" onclick="alert('서비스 준비중입니다.');">신용카드</button>
+                    <button class="fund_button" onclick="alert('서비스 준비중입니다.');">계좌이체</button>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <div class="final_button_box">
+        <button class="fund_final_button" type="submit" >펀딩하기</button>
+    </div>
+</form>
+
+{% endif %}
+
+    <div class="boundary"></div>
+
+    <div class="fund-content3">
+            <h4 class="c3-notice">사용 신청시 주의사항</h4>
+            <p class="c3-list"><i class="fas fa-circle"></i>펀딩 기간 중 단순변심에 의한 환불은 게시자와 직접 교류하고, L.Fun!은 관여하지 않습니다.</p>
+            <p class="c3-list"><i class="fas fa-circle"></i>펀딩 기간 이후 환불은 불가합니다.</p>
+            <p class="c3-list"><i class="fas fa-circle"></i>환불/변경/확정 내역은 '메뉴>참여한 펀딩'에서 확인할 수 있습니다.</p>
+            <p class="c3-list"><i class="fas fa-circle"></i>펀딩이 중단된 경우, 3주 이내에 '내 정보'에 입력된 계좌로 자동 환불됩니다.</p>
+        
+            <h4 class="c3-notice">펀딩 혜택</h4>
+            <p class="c3-list"><i class="fas fa-circle"></i>모금액의 0.001% 이상 펀딩할 시, 펀딩액 3% 할인 쿠폰이 발급됩니다.</p>
+            <p class="c3-list"><i class="fas fa-circle"></i>3개의 펀딩에 참여할 때마다, 펀딩액 1% 할인 쿠폰이 발급됩니다.</p>
+        </div>
+
+    
+    
+
+    <div style="margin-bottom:100px;"></div>
+    {% endblock %}

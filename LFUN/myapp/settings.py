@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'signinup',
     'main1.apps.Main1Config', # 홈
     'place', # 장소신청
-    'search',
+    'search.apps.SearchConfig',
+    'pub_result.apps.PubResultConfig',
+    'mirim.apps.MirimConfig',
+    'pay',
 
 
     # 소셜로그인

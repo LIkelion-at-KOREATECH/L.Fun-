@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+    <title>introduce</title>
+</head>
+
+<body style="width: 1200px; margin-top:20px;">
+
+    <a style="font-size: 3rem; font-weight:bold; color: #E60012; text-decoration: none; margin:30px;"
+        href="{% url 'home2' %}">L.FUN!</a>
+
+    <div style="position:relative; left:10%;">
+        <h2><strong style="color:#E60012;">L.FUN!</strong>은 무엇인가요??</h2>
+
+        <P>
+            <strong>L.FUN!</strong>은 크라우드 펀딩을 통해서 코로나 바이러스로 인해 침체된 연극과 같은 인디 문화컨텐츠를 집에서 즐길 수 있도록 도와주는 플랫폼입니다.<br><br>
+
+            <strong>소비자</strong>들은 펀딩을 통해서 해당 컨텐츠를 집에서 즐길 수 있도록 다양한 매체를 통해서 접근할 수 있습니다.&nbsp;<img
+                style="position:absolute; z-index:3;" src="{% static 'image/detail.PNG' %}" onmouseover="this.src='
+                {% static 'image/page2.png' %}'" onmouseout="this.src='{% static 'image/detail.PNG' %}' "> <br><br>
+
+            <strong>누구나</strong> 펀딩을 오픈 할 수 있으며, LFUN!에서 제공하는 장소대여 서비스와 장비 대여 서비스를 통해서 수월하게 영상을 촬영 할 수 있습니다.&nbsp;<img
+                style=" position:absolute; z-index:2;" src="{% static 'image/detail.PNG' %}" onmouseover="this.src="
+                {% static 'image/page1.PNG' %}" onmouseout="this.src='{% static 'image/detail.PNG' %}"> <br><br>
+        </P>
+
+        <h2><strong style="color:#E60012;">L.FUN!</strong>을 통해서라면 누구나 예술가가 될 수 있습니다.</h2>
+
+        <p>
+            <strong>L.FUN!</strong>은 '누구나'라는 가치를 추구합니다. <br><br>
+            <strong>L.FUN!</strong>을 통해서라면 누구나 연극의 감독이 될 수 있고, 누구나 영화의 배우가 될 수 있습니다. <br><br>
+            <strong>L.FUN!</strong>은 이런 '누구나'를 위해서 장소대여와 전문장비 대여 서비스를 제공하고 있습니다. <br><br>
+        </p>
+
+    </div>
+    <div style="position: absolute; left:40%;">
+        {% if user.is_authenticated %}
+        <div style="margin:10px; ">
+            <a style="color: #ffffff; background-color: #E60012; text-decoration: none;" href="">펀딩 오픈신청하기</a>
+            <a style="color: #ffffff; background-color: #E60012;  text-decoration: none;"
+                href="{% url 'home2' %}">홈으로</a>
+            <a id="logout" style="color: #ffffff; background-color: #E60012;  text-decoration: none;">로그아웃</a>
+        </div>
+        {%endif%}
+        <div style="margin:10px;">
+            아직 회원이 아니시라면?<a style="color: #ffffff; background-color: #E60012; margin-left:10px;  text-decoration: none;"
+                href="">회원가입</a>
+        </div>
+    </div>
+</body>
+
+</html>

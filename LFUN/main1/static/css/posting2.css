@@ -1,15 +1,19 @@
 /* 포스팅 글(간단히) */
 .fund-content1 {
     display: flex;
-    margin-top: 3%;
+    margin-top: 30px;
     justify-content: center;
+    width: 1000px;
+    /* margin-left:auto; */
+    /* margin-right:auto; */
+    margin-left: 240px;
 }
 
 /* 왼쪽 */
 .left {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 550px;
     align-items: center;
 }
 
@@ -17,7 +21,7 @@
 .left-poster-place {
     max-width: 500px;
     max-height: 300px;
-    margin-bottom: 1%;
+    margin-bottom: 20px;
 }
 
 .left-poster-place {
@@ -36,7 +40,7 @@
 .right {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 550px;
     color: #000000;
     align-items: center;
 }
@@ -116,7 +120,7 @@
     width: 15%;
     padding: 1%;
     align-self: flex-end;
-    margin-right: 28.5%;
+    margin-right: 100px;
     margin-top: 2%;
     cursor: pointer;
 }
@@ -138,8 +142,8 @@ p {
 .fund-content3 {
     display: flex;
     flex-direction: column;
-    width: 70%;
-    margin: 5% auto 0 auto;
+    width: 800px;
+    margin: 50px 240px 0 240px;
 }
 
 .fund-content2 {
@@ -147,8 +151,8 @@ p {
 }
 
 .fund-content3 {
-    margin-top: 1%;
-    margin-bottom: 5%;
+    margin-top: 16px;
+    margin-bottom: 40px;
 }
 
 .c-list {

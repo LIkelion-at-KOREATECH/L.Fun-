@@ -1,31 +1,26 @@
-"""myapp URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path, include 
 from django.conf.urls import include
 from django.conf.urls.static import static
 from django.conf import settings
-from main1 import views
 
-urlpatterns = [
+urlpatterns = [ 
     path('admin/', admin.site.urls, name=admin),
     path('', include('signinup.urls')),
     path('account/', include('allauth.urls')),
-    path('apply/', include('place.urls')), # 펀딩/장소 신청
+    
+    # 마이페이지, 기타
+    path('pub/', include('pub_result.urls')),
+    
+    # 메인
     path('main/', include('main1.urls')),
     path('search/', include('search.urls')),
+
+    # 신청 - 장소
+    path('apply/', include('place.urls')),
+
+    # 신청 - 펀딩
+    path('apply_f/', include('mirim.urls')),
+    path('pay/', include('pay.urls')),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

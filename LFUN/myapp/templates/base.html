@@ -144,11 +144,11 @@
 
             {% block apply %}
             <a class="nav-item apply" href="{% url 'place' %}">장소 등록 신청</a>
-            <a class="nav-item apply apply2" href="">펀딩 오픈 신청</a>
+            <a class="nav-item apply apply2" href="{% url 'home' %}">펀딩 오픈 신청</a>
             {% endblock %}
 
             {% block content-home1 %}
-            <a class="nav-item" href="">내 정보</a>
+            <a class="nav-item" href="{% url 'pub'%}">내 정보</a>
             <a class="nav-item info" href="">로그아웃</a>
             {% endblock %}
         </div>
@@ -161,9 +161,9 @@
         <i class="fas fa-align-justify" style="cursor:pointer"></i>
         <ul class="menu-list">
             {% block menu %}
-            <li><a class="menu-content" href="">참여한 펀딩</a></li>
+            <li><a class="menu-content" href="{% url 'pub'%}">참여한 펀딩</a></li>
             {% endblock %}
-            <li><a class="menu-content" href="">소개</a></li>
+            <li><a class="menu-content" href="{% url 'introduce' %}">소개</a></li>
             <li><a class="menu-content" href="">이용약관</a></li>
             <li><a class="menu-content" href="">고객센터</a></li>
         </ul>
