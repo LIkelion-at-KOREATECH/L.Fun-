@@ -23,8 +23,8 @@
                 {% static 'image/page2.png' %}'" onmouseout="this.src='{% static 'image/detail.PNG' %}' "> <br><br>
 
             <strong>누구나</strong> 펀딩을 오픈 할 수 있으며, LFUN!에서 제공하는 장소대여 서비스와 장비 대여 서비스를 통해서 수월하게 영상을 촬영 할 수 있습니다.&nbsp;<img
-                style=" position:absolute; z-index:2;" src="{% static 'image/detail.PNG' %}" onmouseover="this.src="
-                {% static 'image/page1.PNG' %}" onmouseout="this.src='{% static 'image/detail.PNG' %}"> <br><br>
+                style=" position:absolute; z-index:2;" src="{% static 'image/detail.PNG' %}" onmouseover="this.src='
+                {% static 'image/page1.PNG' %}'" onmouseout="this.src='{% static 'image/detail.PNG' %}"> <br><br>
         </P>
 
         <h2><strong style="color:#E60012;">L.FUN!</strong>을 통해서라면 누구나 예술가가 될 수 있습니다.</h2>
@@ -39,15 +39,13 @@
     <div style="position: absolute; left:40%;">
         {% if user.is_authenticated %}
         <div style="margin:10px; ">
-            <a style="color: #ffffff; background-color: #E60012; text-decoration: none;" href="">펀딩 오픈신청하기</a>
             <a style="color: #ffffff; background-color: #E60012;  text-decoration: none;"
                 href="{% url 'home2' %}">홈으로</a>
-            <a id="logout" style="color: #ffffff; background-color: #E60012;  text-decoration: none;">로그아웃</a>
         </div>
         {%endif%}
         <div style="margin:10px;">
             아직 회원이 아니시라면?<a style="color: #ffffff; background-color: #E60012; margin-left:10px;  text-decoration: none;"
-                href="">회원가입</a>
+                href="{% url 'signup' %}">회원가입</a>
         </div>
     </div>
 </body>
