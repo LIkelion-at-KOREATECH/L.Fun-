@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Place register {% endblock %}
+{% block link %} {% static 'css/place.css' %} {% endblock %}
+    
+{%block content%}
+<h1 style="text-align: center;
+            margin-top: 200px;
+            font-weight: 900;"> 로그인이 완료되었습니다.</h1>
+<div class="btn-container" style="text-align: center; margin-top: 50px;">
+    <a class="fi" href="{% url 'home2' %}" >돌아가기</a>
+</div>
+
+{% endblock %}
