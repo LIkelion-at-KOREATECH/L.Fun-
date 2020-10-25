@@ -41,3 +41,8 @@ def register(request):
 def registerfi(request):
     return render(request,'register-fi.html' )
 
+def use(request):
+    return render(request,'use.html')
+
+def center(request):
+    return render(request,'center.html')
