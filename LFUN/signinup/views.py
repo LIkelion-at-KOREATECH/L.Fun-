@@ -24,7 +24,7 @@ def signin(request):
         else:
             print("인증 실패")
             return  render (request, 'signin.html')
-    return render(request, 'signin')
+    return render(request, 'signin.html')
 
 def signup(request):
     if request.method == "POST":
