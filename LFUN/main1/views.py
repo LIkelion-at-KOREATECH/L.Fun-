@@ -27,3 +27,4 @@ def posting1(request, pk):
 def posting2(request, pk):
     places = get_object_or_404(Funding, pk=pk)
     return render(request, 'posting2.html', {'places':places})
+

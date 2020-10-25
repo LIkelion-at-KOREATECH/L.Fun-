@@ -5,4 +5,5 @@ from django.conf import settings
 
 urlpatterns = [
     path('', views.pub, name='pub'),
+    path('intro/', views.introduce, name='introduce')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
