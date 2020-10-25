@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'signinup',
     'main1.apps.Main1Config', # 홈
     'place', # 장소신청
+    'search',
 
 
     # 소셜로그인
@@ -70,7 +71,7 @@ ROOT_URLCONF = 'myapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['myapp/templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'myapp/templates'), os.path.join(BASE_DIR, 'search','templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
