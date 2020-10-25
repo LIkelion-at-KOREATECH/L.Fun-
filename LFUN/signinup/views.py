@@ -17,14 +17,14 @@ def signin(request):
         if user is not None:
             print("인증 성공")
             auth.login(request, user)
-            response = render(request, 'home2.html')
+            return render(request, 'home2.html')
             response.set_cookie('email', email)
             response.set_cookie('password', password)
             return response
         else:
             print("인증 실패")
             return  render (request, 'signin.html')
-    return render(request, 'fi.html')
+    return render(request, 'signin')
 
 def signup(request):
     if request.method == "POST":
