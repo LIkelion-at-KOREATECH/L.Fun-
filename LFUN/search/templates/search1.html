@@ -14,7 +14,7 @@
     }
 </style>{% endblock %}
 {% block logo %}<a class="nav-title" href="{% url 'home1' %}">L.FUN!</a>{% endblock %}
-{% block content-home1 %}<a class="nav-item info" href="">로그인</a><a class="nav-item info" href="">회원가입</a>{% endblock %}
+{% block content-home1 %}<a class="nav-item info" href="{% url 'signin'%}">로그인</a><a class="nav-item info" href="{% url 'signup'%}">회원가입</a>{% endblock %}
 {% block search %}
 <form class="nav-item search-box" action="{% url 'search:searchResult1' %}" method="get">
     {% csrf_token %}
