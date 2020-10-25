@@ -48,3 +48,6 @@ def logout(request):
     if request.method == "POST" :
         auth.logout(request)
         return redirect('/', {'caution':'로그아웃 되었습니다'})
+    
+def fi(request):
+    return render(request, 'fi.html')
