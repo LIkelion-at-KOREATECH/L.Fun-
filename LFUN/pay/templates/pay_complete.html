@@ -1,0 +1,34 @@
+<!-- 비회원용 메인페이지 -->
+
+<!-- 사용한 색상 : #7A7878(진한 회색) #E60012(빨강) #9e9a9a(회색) black-->
+<!-- 사용한 폰트 : Kanit(로고) / Gothic A1(내용) -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %} L.FUN! 홈 {% endblock %}
+{% block extrahead %}
+  <link rel="stylesheet" href="{% static 'css/pay.css' %}">
+  {% endblock %}
+{% block link %} {% static 'css/pay.css' %} {% endblock %}
+{% block logo %}<a class="nav-title" href="{% url 'home1' %}">L.FUN!</a>{% endblock %}
+{% block content-home1 %}<a class="nav-item info" href="">로그인</a><a class="nav-item info" href="">회원가입</a>{% endblock %}
+
+    {% block content %}
+<div class="end_box">
+    <p class="end_p">펀딩이 성공적으로 완료되었습니다.</p>
+    <p class="end_p">감사합니다.</p>
+</div>
+
+
+<div class="end_box2">
+    <a href="{% url 'home1' %}"><button class="end_button">홈으로 돌아가기</button></a>
+</div>
+
+    
+    
+    
+
+    <div style="margin-bottom:100px;"></div>
+    {% endblock %}

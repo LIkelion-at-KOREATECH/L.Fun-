@@ -11,4 +11,5 @@ urlpatterns = [
     # 회원일 경우
     path('member/', views.home2, name='home2'),
     path('posts/<int:pk>/', views.posting2, name='posting2'),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

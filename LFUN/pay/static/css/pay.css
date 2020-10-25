@@ -151,3 +151,37 @@
     margin-right: auto;
     margin-top: 7rem;
 }
+
+.end_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 6rem;
+    margin-top: 7rem;
+}
+
+.end_box2{
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    margin-top: 3rem;
+}
+
+.end_p{
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.end_button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 17rem;
+    height: 5rem;
+    border: 1px solid tomato;
+    color: tomato;
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}

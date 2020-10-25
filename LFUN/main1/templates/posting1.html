@@ -35,8 +35,20 @@
 
 
 {% block content %}
+
+
 <!-- 포스팅 글(간단히) -->
 <div class="overflow fund-content1">
+
+    <div class="center-box2">
+        <span class="center-pro3">모금액</span>
+        <span class="center-pro4">{{ places.funded_price }}원</span>
+    </div>
+
+    <div class="center-box3">
+        <span class="center-pro3">목표액</span>
+        <span class="center-pro5">{{ places.funding_price }}원</span>
+    </div>
 
     <div class="overflow left">
         <img class="left-poster-place" src="{{ places.place_image.url }}">
@@ -54,7 +66,7 @@
             <p class="right-pro6">{{ places.place_extraAddress }}</p>
         </div>
 
-        <button class="funding" name="funding">사용신청</button>
+        <a href="{% url 'pay_page' places.id %}"><button class="funding" name="funding" >사용신청</button></a>
         <button class="share" name="share"><i class="fas fa-share"></i>&nbsp;&nbsp;공유</button>
     </div>
 </div>

@@ -17,10 +17,13 @@
 
     {% block content %}
    
+{% if funding %}
 
+<form action="{% url 'pay_complete' funding.id%}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
     <div class="pay_box">
         <div class="funding_img">
-            <img class="fund_img" src="{% static 'image/poster.png'%}" >
+            <img class="fund_img" src="{{ funding.project_image.url }}" >
         </div>
 
         <div class="pay_items">
@@ -29,10 +32,10 @@
                     <p class="fund_p">펀딩 내용</p>
                 </div>
                 <table class="detail_box">
-                    <tr ><td class="detail_box_td1 detail_font1">제목</td><td class="detail_box_td2 detail_font2">옥탑방 고양이</td></tr>
-                    <tr><td class="detail_box_td1 detail_font1">장르</td><td class="detail_box_td2 detail_font2">코미디, 로맨스</td></tr>
+                    <tr ><td class="detail_box_td1 detail_font1">제목</td><td class="detail_box_td2 detail_font2">{{funding.project_name}}</td></tr>
+                    <tr><td class="detail_box_td1 detail_font1">장르</td><td class="detail_box_td2 detail_font2">{{funding.project_categor}}</td></tr>
                     <tr><td class="detail_box_td1 detail_font1">러닝타임</td><td class="detail_box_td2 detail_font2">100분</td></tr>
-                    <tr><td class="detail_box_td3 detail_font1">마감날짜</td><td class="detail_font2">2020년 10월 25일</td></tr>
+                    <tr><td class="detail_box_td3 detail_font1">마감날짜</td><td class="detail_font2">{{funding.funding_endday}}</td></tr>
                 </table>
             </div>
 
@@ -59,8 +62,11 @@
     </div>
 
     <div class="final_button_box">
-        <button class="fund_final_button">펀딩하기</button>
+        <button class="fund_final_button" type="submit" >펀딩하기</button>
     </div>
+</form>
+
+{% endif %}
 
     <div class="boundary"></div>
 
