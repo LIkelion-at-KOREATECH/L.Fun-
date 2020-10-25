@@ -1,0 +1,90 @@
+<!-- 결과물 확인 페이지 -->
+
+<!-- 사용한 색상 : #7A7878(진한 회색) #E60012(빨강) #9e9a9a(회색) black-->
+<!-- 사용한 폰트 : Kanit(로고) / Gothic A1(내용) -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} 참여내역 {% endblock %}
+{% block link %} {% static 'css/pub.css' %} {% endblock %}
+
+
+{% block style %}
+<style>
+
+</style>
+{% endblock %}
+
+
+{% block content %}
+<h1 style="font-weight:40px;
+margin-left: 200px;
+margin-top: 100px;">결과물 제출</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <label class="label">Youtube 공유 url을 입력해주세요.</label><br><br>
+
+    <div class="input-result">
+
+        <span class="result-box">
+            <input type="text" name="result-name1" placeholder="공유url을 입력해주세요" id="result-name1" required>
+            <input type="text" name="result-name2" placeholder="동영상id를 입력해주세요" id="result-name2" required>
+        </span>
+        <button type="submit" class="video-submit">제출</button>
+
+    </div>
+</form>
+<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+<!-- <div id="player"></div> -->
+<!-- <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://youtu.be/embed/D66I_3uy9bU" -->
+<!-- frameborder="0"></iframe> -->
+
+<script>
+    // 2. This code loads the IFrame Player API code asynchronously.
+    // var tag = document.createElement('script');
+
+    // tag.src = "https://www.youtube.com/iframe_api";
+    // var firstScriptTag = document.getElementsByTagName('script')[0];
+    // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    // var player;
+    // function onYouTubeIframeAPIReady() {
+        // player = new YT.Player('player', {
+            // height: '360',
+            // width: '640',
+            // videoId: 'D66I_3uy9bU',
+            // events: {
+                // 'onReady': onPlayerReady,
+                // 'onStateChange': onPlayerStateChange
+            // }
+        // });
+    // }
+
+    // 4. The API will call this function when the video player is ready.
+    // function onPlayerReady(event) {
+        // event.target.playVideo();
+    // }
+
+    // 5. The API calls this function when the player's state changes.
+    //    The function indicates that when playing a video (state=1),
+    //    the player should play for six seconds and then stop.
+    // var done = false;
+    // function onPlayerStateChange(event) {
+        // if (event.data == YT.PlayerState.PLAYING && !done) {
+            // setTimeout(stopVideo, 6000);
+            // done = true;
+        // }
+    // }
+    // function stopVideo() {
+        // player.stopVideo();
+    // }
+</script>
+
+<iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/D66I_3uy9bU" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+
+{% endblock %}

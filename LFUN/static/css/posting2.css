@@ -3,7 +3,7 @@
     display: flex;
     margin-top: 30px;
     justify-content: center;
-    width: 1000px;
+    width:1000px;
     /* margin-left:auto; */
     /* margin-right:auto; */
     margin-left: 240px;
@@ -13,11 +13,7 @@
 .left {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-    width: 40%;
-=======
     width: 550px;
->>>>>>> home_sooah
     align-items: center;
 }
 
@@ -25,16 +21,7 @@
 .left-poster-place {
     max-width: 500px;
     max-height: 300px;
-<<<<<<< HEAD
-    margin-bottom: 1%;
-=======
     margin-bottom: 20px;
-}
-
-.left-poster-place {
-    margin-top: auto;
-    margin-bottom: auto;
->>>>>>> home_sooah
 }
 
 .left-poster-place {
@@ -53,11 +40,7 @@
 .right {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-    width: 50%;
-=======
     width: 550px;
->>>>>>> home_sooah
     color: #000000;
     align-items: center;
 }
@@ -137,11 +120,7 @@
     width: 15%;
     padding: 1%;
     align-self: flex-end;
-<<<<<<< HEAD
     margin-right: 28.5%;
-=======
-    margin-right: 100px;
->>>>>>> home_sooah
     margin-top: 2%;
     cursor: pointer;
 }
@@ -163,13 +142,8 @@ p {
 .fund-content3 {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-    width: 70%;
-    margin: 5% auto 0 auto;
-=======
     width: 800px;
     margin: 50px 240px 0 240px;
->>>>>>> home_sooah
 }
 
 .fund-content2 {

@@ -1,0 +1,35 @@
+
+
+.nav-container{
+    display:table; width: 100%; background-color:  white;
+}
+
+
+.nav-div1{
+    display:table-cell;font-family: Gill Sans MT;padding-top: 5px;padding-bottom: 5px;
+}
+
+.nav-div2{
+    display: table-cell;
+    padding-right: 50px;
+    color:#7A7878;
+    text-align: right;
+}
+.nav-1{
+    padding-right: 15px;
+}
+
+.reserve{
+    float: left;
+}
+#destination{
+    border:1px solid skyblue;
+    color:red;
+    padding:5px;
+}
+.button_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

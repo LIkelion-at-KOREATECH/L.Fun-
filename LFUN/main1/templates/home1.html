@@ -9,8 +9,21 @@
 {% block title %} L.FUN! 홈 {% endblock %}
 {% block link %} {% static 'css/home2.css' %} {% endblock %}
 {% block logo %}<a class="nav-title" href="{% url 'home1' %}">L.FUN!</a>{% endblock %}
+{% block style %} <style>
+    .menu .menu-list {
+        height: 5.2rem;
+    }
+</style>{% endblock %}
 {% block content-home1 %}<a class="nav-item info" href="">로그인</a><a class="nav-item info" href="">회원가입</a>{% endblock %}
+{% block search %}
+<form class="nav-item search-box" action="{% url 'search:searchResult1' %}" method="get">
+    {% csrf_token %}
+    <input id="" type="search" name="q" maxlength="20" placeholder="찾고싶은 공연이 있다면?">
+    <button type="submit"><i class="fas fa-search fa-lg"></i></button>
+</form>
+{% endblock %}
 
+<<<<<<< HEAD
     {% block content %}
     <!-- 정렬 -->
     <div class="arr-box overflow">
@@ -64,16 +77,98 @@
             <p class="right-title">비용</p>
             <p class="right-content2"> 1일 {{ place.place_price }} </p>
         </div>
+=======
+{% block menu %}
+{% endblock %}
 
+
+{% block apply %}
+<span class="nav-item" style="color:white; margin-right: 300px;">i</span>
+{% endblock %}
+
+{% block content %}
+<!-- 정렬 -->
+<div class="overflow arr-box">
+    <span class="arr arr2">
+        <span style="cursor:pointer">인기순<i class="fas fa-caret-down"></i></span>
+        <ul class="arr-list">
+            <li><a class="menu-content" href="">최신순</a></li>
+            <li><a class="menu-content" href="">오래된순</a></li>
+            <li><a class="menu-content" href="">마감순</a></li>
+            <li><a class="menu-content" href="">인기순</a></li>
+        </ul>
+    </span>
+    <span class="arr arr1">
+        <span style="cursor:pointer">전체<i class="fas fa-caret-down"></i></span>
+        <ul class="arr-list">
+            <li><a class="menu-content" href="">전체</a></li>
+            <li><a class="menu-content" href="">공연</a></li>
+            <li><a class="menu-content" href="">연극</a></li>
+            <li><a class="menu-content" href="">장소</a></li>
+        </ul>
+    </span>
+    <div class="line"></div>
+</div>
+
+<!-- 포스팅 글 -->
+>>>>>>> home_sooah
+
+<!-- 장소 포스팅 -->
+{% if places %}
+
+{% for place in posts %}
+<div class="overflow fund-content">
+
+    <div class="left-place">
+        <a class="left-link" href="{% url 'posting1' place.id %}">
+            <img class="left-poster-place" src="{{ place.place_image.url }}" alt="{{ place.place_name }}">
+            <p class="left-title">{{ place.place_name }}</p>
+        </a>
     </div>
-    {% endfor %}
-    
-    
+    <div class="right-place">
+        <p class="right-title">소개</p>
+        <!-- linebreaksbr는 줄바꿈 인식하는 필터 -->
+        <p class="right-content"> {{ place.summary|linebreaksbr }}</p>
+        <a class="right-content right-link" href="{% url 'posting1' place.id %}">...자세히</a>
+        <p class="right-title">주소</p>
+        <p class="right-content2">
+            {{ place.place_address }}<br>{{ place.place_detailAddress }}
+            {% if place.place_extraAddress %}({{ place.place_extraAddress }}){% endif %}
+        </p>
+        <p class="right-title">비용</p>
+        <p class="right-content2"> 1일 {{ place.place_price }} </p>
+    </div>
+
+</div>
+{% endfor %}
+
+{% else %}
+{% endif %}
+<!-- 페이지 넘기는 기능 -->
+<div class="page-box">
+    <span class="page-num">{{posts.number}}</span> <!-- 페이지 번호 -->
+    <span class="page-num">/</span>
+    <span class="page-num">{{posts.paginator.num_pages}}</span> <!-- posts의 전체 페이지 갯수 -->
+</div>
+<div class="page-box">
+    {% if posts.has_previous %}
+    <!-- posts: 현재 보여지고 있는 페이지 / 1이라면 if문 출력안함 -->
+    <a class="page-text" href="?page=1">처음으로</a> <!-- 첫페이지로 돌아가기 -->
+    <a class="page-text" href="?page={{posts.previous_page_number}}">이전</a> <!-- posts의 바로 이전 페이지 -->
     {% endif %}
-    
+    {% if posts.has_next %}
+    <!-- 다음 페이지 존재하는지 확인 / 마지막 페이지면 출력 안함 -->
+    <a class="page-text" href="?page={{posts.next_page_number}}">다음</a>
+    <a class="page-text" href="?page={{posts.paginator.num_pages}}">끝으로</a>
+    {%endif%}
+</div>
 
-    
-    
 
-    <div style="margin-bottom:100px;"></div>
-    {% endblock %}
+
+
+
+
+
+
+<div style="margin-bottom:100px;"></div>
+{% endblock %}
