@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'place', # 장소신청
     'search.apps.SearchConfig',
     'pub_result.apps.PubResultConfig',
+    'myapp.apps.MyappConfig',
 ]
 
 MIDDLEWARE = [

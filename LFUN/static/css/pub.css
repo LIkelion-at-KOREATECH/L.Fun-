@@ -1,0 +1,77 @@
+/* base.html--------------------------------------------------------------------- */
+.overflow {
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* navbar */
+.nav-container {
+    border-bottom: none;
+    background-color: #E60012;
+}
+
+.nav-title {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.nav-item {
+    color: #ffffff;
+}
+
+.search-box {
+    background-color: #ffffff;
+    border: none;
+}
+
+.apply {
+    border: solid 8px #ffffff;
+    color: #ffffff;
+}
+
+.fa-align-justify {
+    color: #ffffff;
+}
+
+.info {
+    margin-right: 20px;
+}
+
+/* -------------------------------------------------------------------- */
+.label{
+    color:#000000;
+    font-weight:700; 
+    font-size:18px; 
+    display: flex;
+    position: absolute;
+    margin-left: 450px;
+    width: 500px;
+}
+
+.input-result {
+    display: flex;
+    position: absolute;
+    margin-left: 450px;
+    margin-top: 60px;
+    width: 1000px;
+}
+
+.result-box{
+    display: flex;
+    flex-direction: column;}
+
+#result-name1,  #result-name2 {
+    border: 1px solid black;
+    width: 500px;
+    height: 20px;
+}
+
+.video-submit {
+    width: 50px;
+    background-color: black;
+    color: white;
+}
+
+.video {
+    margin-left: 430px;
+}

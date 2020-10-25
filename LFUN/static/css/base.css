@@ -11,31 +11,41 @@ a {
     text-decoration: none;
 }
 
+.overflow {
+    overflow: hidden;
+    display: inline-block;
+}
+
 /* navbar */
 .nav-container {
     display: table;
-    width: 100%;
     border-bottom: 1px solid #7A7878;
+    table-layout: fixed;
 }
 
 .nav-div1 {
     display: table-cell;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
     vertical-align: middle;
+    width: 300px;
+    white-space: nowrap;
+    padding-left: 2rem;
 }
 
 .nav-div2 {
     display: table-cell;
-    text-align: right;
+    /* text-align: right; */
     padding-right: 4rem;
     padding-bottom: auto;
     padding-top: auto;
-    vertical-align: middle;
+    height: 55.78px;
+    vertical-align: bottom;
+    width: 1000px;
+    white-space: nowrap;
+    /* overflow: hidden; */
 }
 
 .nav-title {
-    margin-left: 1.5rem;
+    /* margin-left: 1.5rem; */
     text-decoration: none;
     width: 206px;
     height: 70px;
@@ -52,7 +62,7 @@ a {
 
 .nav-item {
     color: #9e9a9a;
-    font-size: 1rem;
+    /* font-size: 1rem; */
     margin-left: 10px;
     margin-top: auto;
     margin-bottom: auto;
@@ -82,6 +92,7 @@ button {
     border: 0;
     width: 2rem;
     background-color: white;
+    cursor: pointer;
 }
 
 .apply {
@@ -102,7 +113,11 @@ button {
 }
 
 .apply2 {
-    margin-right: 5rem;
+    margin-right: 4rem;
+}
+
+.info {
+    margin-right: 20px;
 }
 
 /* navbar - menu */
@@ -112,21 +127,23 @@ button {
 
 .menu {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    text-align: right;
+    top: 1.2rem;
+    left: 83rem;
+
 }
 
 .menu .menu-list {
+    position: absolute;
+    left: -5rem;
     padding: 10px;
     display: none;
+    width: 100px;
     line-height: 1.8;
     list-style: none;
     background-color: white;
     border: 3px solid #9e9a9a;
     border-radius: 1rem;
-    height: 9rem;
-    padding: 10px;
+    height: 7rem;
     text-align: center;
     color: black;
 }
@@ -139,4 +156,8 @@ button {
 .menu-content:active {
     text-decoration: none;
     color: black;
+}
+
+.info {
+    margin-right: 20px;
 }
