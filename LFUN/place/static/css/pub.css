@@ -7,7 +7,7 @@
 /* navbar */
 .nav-container {
     border-bottom: none;
-    background-color: #E97777;
+    background-color: #E60012;
 }
 
 .nav-title {
@@ -21,6 +21,7 @@
 
 .search-box {
     background-color: #ffffff;
+    border: none;
 }
 
 .apply {
@@ -32,18 +33,45 @@
     color: #ffffff;
 }
 
-.menu-content:visited {
-    text-decoration: none;
-    color: black;
-}
-
-.menu-content:active {
-    text-decoration: none;
-    color: black;
-}
-
 .info {
     margin-right: 20px;
 }
 
 /* -------------------------------------------------------------------- */
+.label{
+    color:#000000;
+    font-weight:700; 
+    font-size:18px; 
+    display: flex;
+    position: absolute;
+    margin-left: 450px;
+    width: 500px;
+}
+
+.input-result {
+    display: flex;
+    position: absolute;
+    margin-left: 450px;
+    margin-top: 60px;
+    width: 1000px;
+}
+
+.result-box{
+    display: flex;
+    flex-direction: column;}
+
+#result-name1,  #result-name2 {
+    border: 1px solid black;
+    width: 500px;
+    height: 20px;
+}
+
+.video-submit {
+    width: 50px;
+    background-color: black;
+    color: white;
+}
+
+.video {
+    margin-left: 430px;
+}
