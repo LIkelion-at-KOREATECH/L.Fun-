@@ -3,7 +3,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from main1 import views
-import myapp.views
+import mirim.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -13,7 +13,9 @@ urlpatterns = [
     path('pub/', include('pub_result.urls')),
 
     # 미림
-    path('',myapp.views.home, name="home"),
-    path('enlarge/',myapp.views.enlarge, name="enlarge"),
-    path('date/', myapp.views.date, name="date"),
+    path('',mirim.views.home, name="home"),
+    path('enlarge/',mirim.views.enlarge, name="enlarge"),
+    path('date/', mirim.views.date, name="date"),
+    path('register/', mirim.views.register, name='register'),
+    path('register/fi/', mirim.views.registerfi,name='registerfi')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

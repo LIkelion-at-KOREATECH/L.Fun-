@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+}
+
+.input-element {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    margin-top: 50px;
+    transform: translateX(-50%);
+}
+
+
+#project_name{
+    width: 1000px;
+    height: 30px;
+    border-radius: 20px;
+    border: solid 1px #f65656;
+    background-color: #ffffff;
+    margin-top : 10px;
+    margin-bottom : 10px;
+}
+
+#project_introduce{
+    width: 1000px;
+    height: 200px;
+    border-radius: 20px;
+    border: solid 1px #f65656;
+    background-color: #ffffff;
+    margin-top : 10px;
+    margin-bottom : 10px;
+
+}
+
+#funding_price{
+    width: 700px;
+    height: 30px;
+    border-radius: 20px;
+    border: solid 1px #f65656;
+    background-color: #ffffff;
+    margin-top : 10px;
+}
+
+#funding_startday{
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    border: solid 1px #f65656;
+    background-color: #ffffff;
+    text-align:center;
+}
+
+#funding_starttime{
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    border: solid 1px #f65656;
+    background-color: #ffffff;
+    text-align:center;
+    margin-top : 10px;
+}
+
+#funding_endday{
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    border: solid 1px #f65656;
+    background-color: #ffffff;
+    text-align:center;
+}
+
+#funding_endtime{
+   width: 150px;  
+   height: 30px;
+   border-radius: 20px;
+   border: solid 1px #f65656;
+   background-color: #ffffff;
+   text-align:center;
+   margin-top : 10px;
+}
+
+#project_ticketprice{
+    width: 700px;
+    height: 30px;
+    border-radius: 20px;
+    border: solid 1px #f65656;
+    background-color: #ffffff;
+}
+
+#funding_bank{
+    width: 700px;
+    height: 30px;
+    border-radius: 20px;
+    border: solid 1px #f65656;
+    background-color: #ffffff;
+}
+
+#funding_account{
+    width: 700px;
+    height: 30px;
+    border-radius: 20px;
+    border: solid 1px #f65656;
+    background-color: #ffffff;
+    margin-top : 10px;
+}

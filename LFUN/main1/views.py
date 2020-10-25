@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from place.models import Place
+from mirim.models import Funding
 from django.core.paginator import Paginator # 페이지에 출력하는 게시글 수 조절
 
 # Create your views here.
